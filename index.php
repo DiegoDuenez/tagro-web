@@ -13,6 +13,7 @@
 
     <?php include 'templates/layouts/banner.html'; ?>
 
+    <?php include 'templates/layouts/nosotros.html'; ?>
 
 
     <?php include 'templates/scripts.html'; ?>
