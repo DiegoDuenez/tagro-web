@@ -1,0 +1,30 @@
+/*
+|   ---------------------------------------------------------------------------------
+|   @Components (Nav)
+|   ---------------------------------------------------------------------------------
+|
+*/
+
+
+.nav{
+    display: flex;
+    width: 100%;
+    min-height: 7rem;
+    height: max-content;
+    padding: 3rem;
+    padding-left: 5rem;
+    position: absolute;
+}
+
+
+.nav__logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14rem;
+    height: 7rem;
+}
+
+.nav__logo img{
+    width: 100%;
+}

@@ -1,0 +1,70 @@
+/*
+|   ---------------------------------------------------------------------------------
+|   @Layouts (Banner)
+|   ---------------------------------------------------------------------------------
+|
+*/
+
+.banner{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: url('../../resources/fondo.jpg') no-repeat center center scroll;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.banner__titulo{
+    font-size: 6rem;
+    color: var(--blanco);
+    margin-top: 2rem;
+}
+
+.banner__titulo span{
+    font-size: 6rem;
+    color: var(--celeste);
+}
+
+@media screen {
+    
+}
+
+.banner__container{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.banner__container--bottom{
+    justify-content: flex-end;
+    padding: 0;
+}
+
+.banner__logos{
+    display: flex;
+    width: 100%;
+    height: max-content;
+    gap: 3rem;
+}
+
+.banner__logo{
+    display: flex;
+    width: 15rem;
+    justify-content: center;
+    align-items: center;    
+}
+
+.banner__logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.banner__logo--md img{
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+

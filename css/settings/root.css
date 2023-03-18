@@ -9,11 +9,12 @@
 
 :root{
 
-    --rojo: #cd392e;
-    --negro: #1e1e1e;
+    --azul: #142c52;
+    --celeste: #2fc1bd;
     --blanco: #ffffff;
-    --ff-titulos: Arial, Helvetica, sans-serif;
-    --ff-textos: Arial, Helvetica, sans-serif;
+    --gris: #5d5d5d;
+    --ff-titulos: 'Lato-Bold';
+    --ff-textos: 'Lato-Regular';
     --fs-titulos: 3rem;
     --fs-textos: 1rem;
     --lh-textos: 2rem;
@@ -45,6 +46,7 @@
     box-sizing: border-box;
         -webkit-padding-start: 0px;
     font-family: var(--ff-textos);
+    font-size: var(--fs-textos);
     letter-spacing: 0.1rem;
     color: var(--negro);
 }

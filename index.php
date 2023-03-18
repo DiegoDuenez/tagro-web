@@ -7,7 +7,13 @@
 </head>
 <body>
 
-    <?php include 'templates/layouts/index.html'; ?>
+    <?php include 'templates/components/boton.html'; ?>
+
+    <?php include 'templates/components/nav.html'; ?>
+
+    <?php include 'templates/layouts/banner.html'; ?>
+
+
 
     <?php include 'templates/scripts.html'; ?>
 

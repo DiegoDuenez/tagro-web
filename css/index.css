@@ -15,6 +15,7 @@
 *   @Settings
 *   ---------------------------------------------------------------------------------
 */
+@import url('settings/fonts.css');
 @import url('settings/normalize.css');
 @import url('settings/root.css');
 
@@ -25,4 +26,13 @@
 *   @Layouts
 *   ---------------------------------------------------------------------------------
 */
-@import url('layouts/index.css');
+@import url('layouts/banner.css');
+
+
+/*
+*   ---------------------------------------------------------------------------------
+*   @Components
+*   ---------------------------------------------------------------------------------
+*/
+@import url('components/nav.css');
+@import url('components/boton.css');

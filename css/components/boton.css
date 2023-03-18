@@ -1,0 +1,29 @@
+/*
+|   ---------------------------------------------------------------------------------
+|   @Components (Nav)
+|   ---------------------------------------------------------------------------------
+|
+*/
+
+
+.boton-menu{
+
+    position: fixed;
+    width: 7rem;
+    height: 7rem;
+    background-color: var(--celeste);
+    right: 0;
+    color: var(--blue);
+    border: none;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+}
+
+.boton-menu i{
+    font-size: 3rem;
+}
