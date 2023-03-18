@@ -82,23 +82,3 @@
     line-height: 2rem;
 }
 
-.nosotros__contenedor--md{
-    background-color: var(--azul);
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column
-}
-
-.nosotros__row{
-    display: flex;
-    gap: 1rem;
-}
-
-.nosotros__card{
-    display: flex;
-    flex-direction: column;
-    width: 25rem;
-    height: 25rem;
-    background-color: red;
-}
