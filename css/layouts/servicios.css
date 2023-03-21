@@ -7,31 +7,81 @@
 
 
 .servicios{
+    display: flex;
     width: 100%;
     height: max-content;
     flex-direction: column;
     position: relative;
     background-color: var(--blanco);
+    align-items: flex-end;
 }
 
 .servicios__contenedor{
     display: flex;
     background-color: var(--azul);
-    width: 90%;
+    width: 75%;
     height: 100%;
-    flex-direction: column
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+    gap: 4rem;
 }
 
 
 .servicios__row{
     display: flex;
-    gap: 1rem;
+    gap: 10rem;
+}
+
+.servicios__row--mt2{
+    margin-top: 7rem;
 }
 
 .servicios__card{
     display: flex;
     flex-direction: column;
     width: 25rem;
-    height: 25rem;
-    background-color: red;
+    height: 15rem;
+    gap: 1rem;
+}
+
+.servicios__card-titulo{
+    color: var(--celeste);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.servicios__card-texto{
+    color: var(--blanco);
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.servicios__card-texto::before{
+    content: " ";
+    font-weight: bold;
+    position: absolute;
+    background-color: var(--celeste);
+    width: 3rem;
+    height: 0.3rem;
+    left: -4rem;
+    top: 0.7rem;
+
+}
+
+.servicios__titulo{
+    font-size: 4rem;
+    color: var(--blanco);
+    text-align: center;
+}
+
+.servicios__titulo span{
+    font-size: 4rem;
+    color: var(--celeste);
+}
+
+.servicios__img{
+    position: absolute;
+    left: -15rem;
+    top: 2rem;
 }
