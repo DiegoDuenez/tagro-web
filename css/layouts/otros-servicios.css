@@ -1,0 +1,95 @@
+/*
+|   ---------------------------------------------------------------------------------
+|   @Layouts (Otros Servicios)
+|   ---------------------------------------------------------------------------------
+|
+*/
+
+
+.otros-servicios{
+    display: flex;
+    width: 100%;
+    height: max-content;
+    position: relative;
+    background-color: var(--blanco);
+}
+
+.otros-servicios__col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+}
+
+.otros-servicios__col--sm{
+    width: 30%;
+}
+
+.otros-servicios__titulo{
+    font-size: 4rem;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    color: var(--azul);
+}
+
+.otros-servicios__titulo span{
+    font-size: 4rem;
+    color: var(--celeste);
+}
+
+.otros-servicios__texto{
+    font-size: 1.5rem;
+    text-align: justify;
+    width: 60%;
+    margin-top: 2rem;
+}
+
+.otros-servicios__normas{
+    background-color: var(--azul);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 4rem;
+    gap: 3rem;
+    padding: 3rem;
+}
+
+.otros-servicios__normas-titulo{
+    font-size: 2rem;
+    color: var(--blanco);
+    text-align: center;
+}
+
+.otros-servicios__normas-titulo span{
+    font-size: 2rem;
+    color: var(--celeste);
+}
+
+.otros-servicios__normas-images{
+    display: flex;
+    height: 5rem;
+    justify-content: center;
+}
+
+.otros-servicios__normas-img{
+    width: 15%;
+    height: 100%;
+}
+
+.otros-servicios__normas-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.otros-servicios__img{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    background-image: url(../../resources/otros-servicios.jpg);
+    background-position:top;
+    background-repeat: no-repeat;
+}
