@@ -19,6 +19,8 @@
 
     <?php include 'templates/layouts/otros-servicios.html'; ?>
 
+    <?php include 'templates/layouts/proyectos.html'; ?>
+
     <?php include 'templates/scripts.html'; ?>
 
     
