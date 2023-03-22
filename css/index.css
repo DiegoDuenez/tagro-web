@@ -31,6 +31,7 @@
 @import url('layouts/servicios.css');
 @import url('layouts/otros-servicios.css');
 @import url('layouts/proyectos.css');
+@import url('layouts/contacto.css');
 
 
 /*
@@ -40,3 +41,4 @@
 */
 @import url('components/nav.css');
 @import url('components/boton.css');
+@import url('components/scroll.css');

@@ -51,6 +51,7 @@
     padding: 1rem;
     font-weight: bold;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .proyectos__categoria:hover{

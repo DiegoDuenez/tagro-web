@@ -1,0 +1,135 @@
+/*
+|   ---------------------------------------------------------------------------------
+|   @Layouts (Contacto)
+|   ---------------------------------------------------------------------------------
+|
+*/
+
+
+.contacto{
+    display: flex;
+    width: 100%;
+    height: max-content;
+    position: relative;
+    padding: 3rem 10rem;
+    flex-direction: column;
+    background-color: var(--azul);
+    gap:3rem;
+}
+
+.contacto__header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contacto__titulo{
+    font-size: 4rem;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    color: var(--blanco);
+}
+
+.contacto__titulo span{
+    font-size: 4rem;
+    color: var(--celeste);
+}
+
+.contacto__texto{
+    color: var(--blanco);
+    font-size: 1.5rem;
+}
+
+.contacto__form-container{
+    display: flex;
+    padding: 2rem;
+    justify-content: space-around;
+}
+
+.contacto__form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 3rem;
+}
+
+.contacto__input-line{
+    display: flex;
+}
+
+.contacto__input{
+    color: var(--blanco);
+    padding: 1rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px var(--blanco) solid ;
+    width: 100%;
+    background-color: transparent;
+}
+
+.contacto__input::placeholder { 
+    color: var(--blanco);
+    opacity: 1; 
+    font-size: 2rem;
+}
+
+.contacto__input:focus::placeholder{
+    opacity: 0.5; 
+}
+
+.contacto__button{
+    background-color: var(--celeste);
+    color: var(--azul);
+    border: none;
+    outline: none;
+    font-weight: bold;
+    width: 10rem;
+    padding: 1rem;
+    height: max-content;
+    align-self: center;
+    cursor: pointer;
+}
+
+.contacto__informacion{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 4rem;
+}
+
+.contacto__link{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.contacto__informacion-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contacto__informacion-container--row{
+    flex-direction: row;
+}
+
+.contacto__link i{
+    color: var(--celeste);
+    font-size: 1.5rem;
+}
+
+.contacto__link--white i{
+    color: var(--blanco);
+    font-size: 3rem;
+}
+
+.contacto__img{
+    width: 10rem;
+    height: 4rem;
+}

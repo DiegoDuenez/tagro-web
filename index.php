@@ -21,6 +21,8 @@
 
     <?php include 'templates/layouts/proyectos.html'; ?>
 
+    <?php include 'templates/layouts/contacto.html'; ?>
+
     <?php include 'templates/scripts.html'; ?>
 
     
