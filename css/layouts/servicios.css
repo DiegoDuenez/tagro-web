@@ -142,9 +142,8 @@
 }
 
 .servicios__materiales-menu-numero{
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 1rem;
-    border-right: 0.1rem var(--gris) solid;
     color: var(--celeste);
     font-weight: bold;
 }
@@ -159,20 +158,16 @@
     top: 1.3rem;
 }
 
-/*
-.servicios__materiales-menu-row:hover .servicios__materiales-menu-numero{
-    border-right: 0.2rem var(--celeste) solid;
-}
-
-.servicios__materiales-menu-row:hover .servicios__materiales-menu-texto{
-    color: var(--azul);
-}*/
-
 .servicios__materiales-menu-texto{
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 1rem;
     color: var(--gris);
     font-weight: bold;
+}
+
+.servicios__materiales-menu-texto:hover{
+    border-left: 3px var(--celeste) solid;
+    color: var(--azul);
 }
 
 .servicios__materiales-menu-img{
