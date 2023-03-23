@@ -1,6 +1,6 @@
 /*
 |   ---------------------------------------------------------------------------------
-|   @Components (Nav)
+|   @Components (Boton)
 |   ---------------------------------------------------------------------------------
 |
 */
@@ -23,6 +23,11 @@
     font-weight: bold;
     z-index: 9999;
     cursor: pointer;
+}
+
+
+.boton-menu--absolute{
+    position: absolute;
 }
 
 .boton-menu i{

@@ -1,5 +1,23 @@
 <!--====== AOS JS ======-->
 <script src="libs/aos/dist/aos.js"></script>
+<!--====== MENU JS ======-->
+<script src="libs/menu/dist/js/menu.min.js"></script>
 <script>
     AOS.init()
+
+    menu = new Menu({options: {element: '.menu', openWith: '#btn-menu', closeWith: '#btn-menu-close', size:'lg', from: 'right',
+        callbackOnOpen: function(){
+            let body = document.querySelector('body')
+            body.style.overflow = 'hidden'
+        },
+        callbackOnClose: function(){
+            let body = document.querySelector('body')
+            body.style.overflow = 'auto'
+        }  
+    }})
+
+    menu.init()
+
+    menu.closeWith('.menu__link')
+
 </script>
