@@ -26,15 +26,42 @@
     padding: 5rem;
     gap: 4rem;
 }
+    @media screen and (min-width: 1041px) and (max-width: 1900px){
+        .servicios__contenedor{
+            padding-left: 8rem ;
+        }
+    }
+    @media screen and (min-width: 300px) and (max-width: 1040px){
+        .servicios__contenedor{
+            width: 100%;
+            padding: 2rem;
+            padding-top: 5rem;
+        }
+    }
+
 
 .servicios__row{
     display: flex;
     gap: 10rem;
 }
+    @media screen and (min-width: 300px) and (max-width: 1400px){
+        .servicios__row{
+            flex-direction: column;
+            gap: 4rem;
+            justify-content: center;
+        }
+    }
+
 
 .servicios__row--mt2{
     margin-top: 7rem;
 }
+    @media screen and (min-width: 300px) and (max-width: 1400px){
+        .servicios__row--mt2{
+            margin: 0;
+        }
+    }
+    
 
 .servicios__card{
     display: flex;
@@ -43,6 +70,12 @@
     height: 15rem;
     gap: 1rem;
 }
+    @media screen and (min-width: 300px) and (max-width: 1400px){
+        .servicios__card{
+            height: max-content;
+        }
+    }
+
 
 .servicios__card-titulo{
     color: var(--celeste);
@@ -84,6 +117,17 @@
     left: -22rem;
     top: 2rem;
 }
+    @media screen and (min-width: 300px) and (max-width: 1900px){
+        .servicios__img{
+            left: -35rem;
+        }
+    }
+    @media screen and (min-width: 300px) and (max-width: 1040px){
+        .servicios__img{
+            display: none;
+        }
+    }
+
 
 .servicios__materiales{
     display: flex;

@@ -25,10 +25,34 @@
     font-size: 6rem;
     color: var(--celeste);
 }
+    @media screen and (min-width: 700px) and (max-width: 1900px){
 
-@media screen {
-    
-}
+        .banner__titulo{
+            font-size: 4rem;
+        }
+
+        .banner__titulo span{
+            font-size: 4rem;
+        }
+
+    }
+    @media screen and (min-width: 300px) and (max-width: 699px){
+
+        .banner__titulo{
+            font-size: 3rem;
+        }
+
+        .banner__titulo span{
+            font-size: 3rem;
+        }
+
+    }
+    @media screen and (min-width: 300px) and (max-width: 1000px){
+        .banner__titulo{
+            text-align: center;
+        }
+    }
+
 
 .banner__container{
     display: flex;
@@ -37,18 +61,38 @@
     justify-content: center;
     padding: 3rem;
 }
+    @media screen and (min-width: 300px) and (max-width: 1000px){
+        .banner__container{
+            width: 100%;
+            gap: 2em;
+        }
+    }
+
 
 .banner__container--bottom{
     justify-content: flex-end;
     padding: 0;
 }
+    @media screen and (min-width: 300px) and (max-width: 1000px){
+        .banner__container--bottom{
+            display: none;
+        }
+    }
+
 
 .banner__logos{
     display: flex;
     width: 100%;
     height: max-content;
     gap: 3rem;
+    justify-content: center;
 }
+    @media screen and (min-width: 300px) and (max-width: 1000px){
+        .banner__logos{
+            flex-wrap: wrap;
+        }
+    }
+
 
 .banner__logo{
     display: flex;
@@ -56,6 +100,12 @@
     justify-content: center;
     align-items: center;    
 }
+    @media screen and (min-width: 300px) and (max-width: 1000px){
+        .banner__logo{
+            width: 10rem;
+        }
+    }
+
 
 .banner__logo img{
     width: 100%;
