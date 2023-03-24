@@ -17,7 +17,7 @@
 }
     @media screen and (min-width: 300px) and (max-width: 1000px){
         .nav{
-            padding: 1rem;
+            padding: 2rem;
         }
     }
 
@@ -28,6 +28,12 @@
     width: 14rem;
     height: 7rem;
 }
+    @media screen and (min-width: 300px) and (max-width: 1000px){
+        .nav__logo{
+            width: 10rem;
+            height: 3rem;
+        }
+    }
 
 .nav__logo img{
     width: 100%;

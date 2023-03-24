@@ -61,7 +61,7 @@
             margin: 0;
         }
     }
-    
+
 
 .servicios__card{
     display: flex;
@@ -111,6 +111,16 @@
     font-size: 4rem;
     color: var(--celeste);
 }
+    @media screen and (min-width: 300px) and (max-width: 1400px){
+        .servicios__titulo{
+            font-size: 3rem;
+        }
+
+        .servicios__titulo span{
+            font-size: 3rem;
+        }
+    }
+
 
 .servicios__img{
     position: absolute;
