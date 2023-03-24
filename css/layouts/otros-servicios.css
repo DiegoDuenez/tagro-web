@@ -82,16 +82,7 @@
 .otros-servicios__normas-images{
     display: flex;
     gap: 1rem;
-    /*height: 5rem;
-    justify-content: center;*/
 }
-    @media screen and (min-width: 300px) and (max-width: 900px){
-        .otros-servicios__normas-images{
-            /*flex-direction: wrap;
-            gap: 3rem;
-            height: max-content;*/
-        }
-    }
 
 .otros-servicios__normas-images {
     align-self: center;
@@ -106,6 +97,7 @@
             width: 100%;
         }
     }
+
 
 .otros-servicios__normas-images>.item {
     display:flex;
