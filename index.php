@@ -17,7 +17,7 @@
 
     <?php include 'templates/layouts/nosotros.html'; ?>
 
-    <?php include 'templates/layouts/servicios.html'; ?>
+    <?php include 'templates/layouts/servicios.php'; ?>
 
     <?php include 'templates/layouts/otros-servicios.html'; ?>
 

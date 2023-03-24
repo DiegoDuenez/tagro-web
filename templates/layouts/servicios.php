@@ -1,3 +1,5 @@
+<?php include 'config/materiales.php'; ?>
+
 <div class="servicios" id="servicios">
 
 
@@ -100,68 +102,55 @@
                  Acero inoxidable
             </div>
 
-            <div class="servicios__materiales-menu-item">
-                <div class="servicios__materiales-menu-numero">
-                    01
-                </div>
-                <div class="servicios__materiales-menu-texto">
-                    Acero inoxidable
-                </div>
-            </div>
+            <?php $contador = 1; foreach($materiales['menu'] as $key => $value): ?>
 
-            <div class="servicios__materiales-menu-item">
-                <div class="servicios__materiales-menu-numero">
-                    02
+                <div class="servicios__materiales-menu-item">
+                    <div class="servicios__materiales-menu-numero">
+                        0<?php echo $contador++?>
+                    </div>
+                    <div class="servicios__materiales-menu-texto">
+                        <?php echo $key; ?>
+                    </div>
                 </div>
-                <div class="servicios__materiales-menu-texto">
-                    Acero al carbón
-                </div>
-            </div>
 
-            <div class="servicios__materiales-menu-item">
-                <div class="servicios__materiales-menu-numero">
-                    03
-                </div>
-                <div class="servicios__materiales-menu-texto">
-                    Acero galvanizado
-                </div>
-            </div>
-
-            <div class="servicios__materiales-menu-item">
-                <div class="servicios__materiales-menu-numero">
-                    04
-                </div>
-                <div class="servicios__materiales-menu-texto">
-                    Vidrio fusionado al acero
-                </div>
-            </div>
+            <?php endforeach;?>
 
         </div>
 
-        <div class="servicios__materiales-descripcion">
 
-            <div class="servicios__materiales-img">
+            <?php foreach($materiales['menu'] as $key => $value):?>
 
-                <img src="resources/acero-inoxidable.jpg" alt="Tanque" >
+                <div class="servicios__materiales-descripcion" style="<?php echo ($materiales['menu'][$key]['visible'] == 'false' ? 'display:none' : '') ?>">
 
-            </div>
+                    <div class="servicios__materiales-img">
 
-            <div class="servicios__materiales-info">
+                        <img src="<?php echo $materiales['menu'][$key]['img'] ?>" alt="Tanque" >
 
-                Este tipo de tanques son fabricados con mano de obra 100% mexicana, pudiendo ser soldado o atornillados
-                y representan una excelente opción por sus grandes ventajas:
+                    </div>
 
-                <ul  class="servicios__materiales-lista">
+                    <div class="servicios__materiales-info">
 
-                    <li>Rapidez en diseño, suministro, producción y fabricación.</li>
-                    <li>Diseñados bajo normas / estándares como API 650, AWWA y NSF.</li>
-                    <li>Instalados para sistemas contra incendio, pudiendo ser aprobados por Factory Mutual y bajo los estándares de la NFPA.</li>
+                        <?php echo ( array_key_exists('texto',$materiales['menu'][$key]) ? $materiales['menu'][$key]['texto'] : '' ) ?>
+                
+                        <ul  class="servicios__materiales-lista">
 
-                </ul>
+                            <?php if(array_key_exists('lista',$materiales['menu'][$key])): ?>
 
-            </div>
+                                <?php foreach($materiales['menu'][$key]['lista'] as $value): ?>
 
-        </div>
+                                    <li><?php echo $value ?></li>
+
+                                <?php endforeach;?>
+
+                            <?php endif;?>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+                    
+            <?php  endforeach;?>
 
     </div>
 
