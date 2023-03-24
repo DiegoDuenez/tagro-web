@@ -16,6 +16,12 @@
     background-color: var(--azul);
     gap:3rem;
 }
+    @media screen and (min-width: 300px) and (max-width: 1200px){
+        .contacto{
+            padding: 3rem 2rem;
+        }
+    }
+
 
 .contacto__header{
     display: flex;
@@ -41,6 +47,8 @@
 .contacto__texto{
     color: var(--blanco);
     font-size: 1.5rem;
+    text-align: center;
+
 }
 
 .contacto__form-container{
@@ -48,6 +56,13 @@
     padding: 2rem;
     justify-content: space-around;
 }
+    @media screen and (min-width: 300px) and (max-width: 1000px){
+        .contacto__form-container{
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+
 
 .contacto__form{
     display: flex;
@@ -55,10 +70,24 @@
     width: 50%;
     gap: 3rem;
 }
+    @media screen and (min-width: 300px) and (max-width: 1000px){
+        .contacto__form{
+            width: 100%;
+        }
+    }
+
 
 .contacto__input-line{
     display: flex;
 }
+    @media screen and (min-width: 300px) and (max-width: 650px){
+        .contacto__input-line{
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+    }
+
 
 .contacto__input{
     color: var(--blanco);
@@ -99,6 +128,12 @@
     padding: 2rem;
     gap: 4rem;
 }
+    @media screen and (min-width: 300px) and (max-width: 1000px){
+        .contacto__informacion{
+            align-items: center;
+        }
+    }
+
 
 .contacto__link{
     color: var(--blanco);
@@ -106,6 +141,7 @@
     font-size: 1.2rem;
     display: flex;
     gap: 0.5rem;
+    text-align: center;
     align-items: center;
 }
 
