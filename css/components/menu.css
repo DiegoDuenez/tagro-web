@@ -13,6 +13,10 @@
     padding: 0;
     background-color: var(--azul);
     gap: 1rem;
+    background-image: url(../../resources/marca-agua.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
     @media screen and (min-width: 300px) and (max-width: 900px){
         .menu{
@@ -20,17 +24,6 @@
         }
     }
 
-
-.menu__fondo{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: url(../../resources/marca-agua.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
 
 .menu__col{
     display: flex;

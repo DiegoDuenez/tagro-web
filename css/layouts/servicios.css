@@ -14,6 +14,7 @@
     position: relative;
     background-color: var(--blanco);
     align-items: flex-end;
+    
 }
 
 
@@ -26,6 +27,12 @@
     align-items: center;
     padding: 5rem;
     gap: 4rem;
+    position: relative;
+
+    background-image: url(../../resources/marca-agua.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
     @media screen and (min-width: 1041px) and (max-width: 1900px){
         .servicios__contenedor{
