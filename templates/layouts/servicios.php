@@ -98,17 +98,17 @@
 
         <div class="servicios__materiales-menu">
 
-            <div class="servicios__materiales-titulo">
+            <div class="servicios__materiales-titulo" id="servicio-title">
                  Acero inoxidable
             </div>
 
             <?php $contador = 1; foreach($materiales['menu'] as $key => $value): ?>
 
-                <div class="servicios__materiales-menu-item">
+                <div class="servicios__materiales-menu-item" data-title="<?php echo $key ?>" data-item="<?php echo $materiales['menu'][$key]['id']; ?>">
                     <div class="servicios__materiales-menu-numero">
                         0<?php echo $contador++?>
                     </div>
-                    <div class="servicios__materiales-menu-texto">
+                    <div class="servicios__materiales-menu-texto" id="servicio_material">
                         <?php echo $key; ?>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
 
             <?php foreach($materiales['menu'] as $key => $value):?>
 
-                <div class="servicios__materiales-descripcion" style="<?php echo ($materiales['menu'][$key]['visible'] == 'false' ? 'display:none' : '') ?>">
+                <div class="servicios__materiales-descripcion" id="<?php echo $materiales['menu'][$key]['id']; ?>" style="<?php echo ($materiales['menu'][$key]['visible'] == 'false' ? 'display:none' : '') ?>">
 
                     <div class="servicios__materiales-img">
 

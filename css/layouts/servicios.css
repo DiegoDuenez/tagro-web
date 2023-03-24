@@ -176,6 +176,7 @@
     gap: 1rem;
     position: relative;
     width: 100%;
+    cursor: pointer;
 }
 
 .servicios__materiales-menu-numero{

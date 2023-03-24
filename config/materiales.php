@@ -17,7 +17,9 @@ $materiales = [
                 "Instalados para sistemas contra incendio, pudiendo ser aprobados por Factory Mutual y bajo los estándares de la NFPA."
             ],
 
-            "visible" => 'true'
+            "visible" => 'true',
+
+            "id" => "acero_inoxidable"
             
         ],
 
@@ -38,7 +40,10 @@ $materiales = [
 
             ],
 
-            "visible" => 'false'
+            "visible" => 'false',
+
+            "id" => "acero_carbon"
+
 
         ],
 
@@ -68,7 +73,10 @@ $materiales = [
                 "Firewater Tanks - Technical brief"
             ],
 
-            "visible" => 'false'
+            "visible" => 'false',
+
+            "id" => "acero_galvanizado"
+
 
         ],
 
@@ -83,7 +91,9 @@ $materiales = [
 
             ],
 
-            "visible" => 'false'
+            "visible" => 'false',
+
+            "id" => "vidrio_fusionado"
 
         ]
     ],
