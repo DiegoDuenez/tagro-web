@@ -7,6 +7,8 @@
 </head>
 <body>
 
+    <?php include 'templates/components/modal.html' ?>
+
     <?php include 'templates/components/menu.html' ?>
 
     <?php include 'templates/components/boton.html'; ?>

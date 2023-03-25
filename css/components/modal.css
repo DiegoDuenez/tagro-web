@@ -1,0 +1,96 @@
+/*
+|   ---------------------------------------------------------------------------------
+|   @Components (Modal)
+|   ---------------------------------------------------------------------------------
+|
+*/
+
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(109, 109, 109, 0.477) ;
+    z-index: 999999;
+}
+
+.modal__container{
+    position: relative;
+    width: 70%;
+    height: 90%;
+    background-color: red;
+    display: flex;
+}
+
+.modal__col{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    background-color: blue;
+}
+
+.modal__col--w70{
+    width: 70%;
+}
+
+.modal__col--w30{
+    width: 30%;
+    background-color: green;
+}
+
+.modal__header{
+    display: flex;
+    width: 100%;
+    min-height: 30%;
+    height: max-content;
+    background-color: yellow;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modal__titulo{
+    font-size: 2rem;
+    color: var(--azul);
+    font-weight: bold;
+}
+
+.modal__texto{
+    font-size: 1.5rem;
+
+}
+
+.modal__boton{
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    background-color: var(--azul);
+    left: 0;
+    top: 0;
+    color: var(--blanco);
+    border: none;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.modal__boton i{
+    font-size: 3rem;
+}
+
+/*
+.modal__img{
+    max-width: 100%;
+    max-height: 100%;
+    transition: 400ms;
+    object-fit: cover;
+}
+*/

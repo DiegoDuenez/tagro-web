@@ -32,7 +32,7 @@
     background-image: url(../../resources/marca-agua.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center;
+    background-position: center
 }
     @media screen and (min-width: 1041px) and (max-width: 1900px){
         .servicios__contenedor{
@@ -133,6 +133,7 @@
     position: absolute;
     left: -22rem;
     top: 2rem;
+    z-index: 1;
 }
     @media screen and (min-width: 300px) and (max-width: 1900px){
         .servicios__img{
