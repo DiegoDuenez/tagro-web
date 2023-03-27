@@ -42,7 +42,7 @@
     @media screen and (min-width: 300px) and (max-width: 1040px){
         .servicios__contenedor{
             width: 100%;
-            padding: 2rem;
+            padding: 5rem;
             padding-top: 5rem;
         }
     }
@@ -57,6 +57,12 @@
             flex-direction: column;
             gap: 4rem;
             justify-content: center;
+        }
+    }
+    @media screen and (min-width: 300px) and (max-width: 1040px){
+        .servicios__row{
+            width: 100%;
+            height: max-content;
         }
     }
 
@@ -83,6 +89,12 @@
             height: max-content;
         }
     }
+    @media screen and (min-width: 300px) and (max-width: 1040px){
+        .servicios__card{
+            width: 100%;
+            height: max-content;
+        }
+    }
 
 
 .servicios__card-titulo{
@@ -96,7 +108,7 @@
     font-size: 1.5rem;
     position: relative;
 }
-
+/*
 .servicios__card-texto::before{
     content: " ";
     font-weight: bold;
@@ -106,7 +118,7 @@
     height: 0.3rem;
     left: -4rem;
     top: 0.7rem;
-}
+}*/
 
 .servicios__titulo{
     font-size: 4rem;

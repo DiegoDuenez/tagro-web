@@ -49,6 +49,7 @@
     font-size: var(--fs-textos);
     letter-spacing: 0.1rem;
     color: var(--negro);
+    text-align: justify;
 }
 
 p{
