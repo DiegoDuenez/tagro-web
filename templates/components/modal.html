@@ -1,25 +1,28 @@
 <div class="modal">
 
-    
-
     <div class="modal__container">
 
-      <button class="modal__boton" id="btn-menu">
+      <button class="modal__boton" id="btn-modal-close">
         <i class="fa-solid fa-xmark"></i>
-        CERRAR
       </button>
 
       <div class="modal__col modal__col--w70">
-        
-        
-        <div class="glide" id="banner__modal" >
-          <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-              <li class="glide__slide">  
-                <img src="resources/ejemplo/2.jpg" alt="Industrial" class="modal__img"> 
-            </li>
-            </ul>
+       
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="resources/ejemplo/2.jpg" alt="Industrial" class="modal__img">
+            </div>
+            <div class="swiper-slide">
+              <img src="resources/ejemplo/2.jpg" alt="Industrial" class="modal__img">
+            </div>
           </div>
+          <div class="swiper-pagination"></div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <div class="swiper-scrollbar"></div>
         </div>
 
       </div>

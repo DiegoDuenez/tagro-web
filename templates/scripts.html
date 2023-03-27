@@ -6,23 +6,27 @@
 <script src="libs/menu/dist/js/menu.min.js"></script>
 <!--====== GLIDE JS ======-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script>
 
     AOS.init()
 
-    var glideModal = new Glide('#banner__modal', {
-    type: 'carousel',
-    perView: 1,
-    breakpoints: {
-		//   600: { perView: 1 },
-		//   900: { perView: 2 },
+    const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 2000,
+            },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
 
-    }
     });
-    glideModal.mount();
+
     
-    menu = new Menu({options: {element: '.menu', openWith: '#btn-menu', closeWith: '#btn-menu-close', size:'lg', from: 'right',
+    const menu = new Menu({options: {element: '.menu', openWith: '#btn-menu', closeWith: '#btn-menu-close', size:'lg', from: 'right',
         callbackOnOpen: function(){
             let body = document.querySelector('body')
             body.style.overflow = 'hidden'
@@ -36,5 +40,20 @@
     menu.init()
 
     menu.closeWith('.menu__link')
+
+    const modal = new Menu({options: {element: '.modal__container', openWith: '.proyectos__card', closeWith: '#btn-modal-close', from: 'bottom',
+        callbackOnOpen: function(){
+            let modal_back= document.querySelector('.modal')
+            modal_back.style.visibility = 'visible'
+
+        },
+        callbackOnClose: function(){
+            let modal = document.querySelector('.modal')
+            modal.style.visibility = 'hidden'
+        }  
+    }})
+    modal.init()
+
+
 
 </script>
