@@ -124,6 +124,7 @@
     height: max-content;
     align-self: center;
     cursor: pointer;
+    text-align: center;
 }
 
 .contacto__informacion{
