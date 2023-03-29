@@ -1,0 +1,15 @@
+
+*{
+    border-radius: 0 !important;
+}
+
+.swal2-icon, .swal2-success-ring{
+    border-radius: 50% !important;
+}
+
+:root{
+    --gris: #cccccc;
+    --gris__200:#646464;
+    --celeste: #1cbbb5;
+    --azul: #14345c;
+}

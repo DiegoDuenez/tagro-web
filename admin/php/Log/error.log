@@ -1,49 +1,28 @@
-[27/03/23 18:11:42] Error: PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bd_tagro.users' doesn't exist in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:43
+[29/03/23 11:27:00] Error: PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password' in 'field list' in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:121
 Stack trace:
-#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(43): PDOStatement->execute()
-#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(343): Database->read('SELECT * FROM u...', Object(Closure))
-#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\Usuario.php(123): Model->get()
-#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(41): Usuario->login('dduenez', '123')
+#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(121): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(351): Database->execute('INSERT INTO usu...', Array, Object(Closure))
+#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\Usuario.php(47): Model->exec()
+#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(22): Usuario->create('diego', '123')
 #4 {main}
-[27/03/23 18:11:58] Error: PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bd_tagro.usua2rio' doesn't exist in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:43
+[29/03/23 11:36:03] Error: PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'password' in 'field list' in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:121
 Stack trace:
-#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(43): PDOStatement->execute()
-#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(343): Database->read('SELECT * FROM u...', Object(Closure))
-#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\Usuario.php(123): Model->get()
-#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(41): Usuario->login('dduenez', '123')
+#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(121): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(351): Database->execute('UPDATE usuarios...', Array, Object(Closure))
+#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\Usuario.php(90): Model->exec()
+#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(32): Usuario->edit('dduenez', '12345', '1')
 #4 {main}
-[27/03/23 18:13:24] Error: PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bd_tagro.usua2rio' doesn't exist in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:43
+[29/03/23 11:37:58] Error: PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'contrasenia2' in 'field list' in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:121
 Stack trace:
-#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(43): PDOStatement->execute()
-#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(343): Database->read('SELECT * FROM u...', Object(Closure))
-#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\Usuario.php(123): Model->get()
-#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(41): Usuario->login('dduenez', '123')
+#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(121): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(351): Database->execute('UPDATE usuarios...', Array, Object(Closure))
+#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\Usuario.php(90): Model->exec()
+#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(32): Usuario->edit('dduenez', '2', '1')
 #4 {main}
-[27/03/23 18:13:35] Error: PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bd_tagro.usua2rio' doesn't exist in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:43
+[29/03/23 11:40:25] Error: PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'contrasenia2' in 'field list' in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:121
 Stack trace:
-#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(43): PDOStatement->execute()
-#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(343): Database->read('SELECT * FROM u...', Object(Closure))
-#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\Usuario.php(123): Model->get()
-#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(41): Usuario->login('dduenez', '123')
-#4 {main}
-[27/03/23 18:14:01] Error: PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bd_tagro.usua2rio' doesn't exist in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:43
-Stack trace:
-#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(43): PDOStatement->execute()
-#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(343): Database->read('SELECT * FROM u...', Object(Closure))
-#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\Usuario.php(123): Model->get()
-#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(41): Usuario->login('dduenez', '123')
-#4 {main}
-[27/03/23 18:14:40] Error: PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bd_tagro.usua2rio' doesn't exist in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:43
-Stack trace:
-#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(43): PDOStatement->execute()
-#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(343): Database->read('SELECT * FROM u...', Object(Closure))
-#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\Usuario.php(123): Model->get()
-#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(41): Usuario->login('dduenez', '123')
-#4 {main}
-[27/03/23 18:16:32] Error: PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bd_tagro.usua2rio' doesn't exist in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:43
-Stack trace:
-#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(43): PDOStatement->execute()
-#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(343): Database->read('SELECT * FROM u...', Object(Closure))
-#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\Usuario.php(123): Model->get()
-#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(41): Usuario->login('dduenez', '123')
+#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(121): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(351): Database->execute('UPDATE usuarios...', Array, Object(Closure))
+#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\Usuario.php(90): Model->exec()
+#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(32): Usuario->edit('dduenez', '123', '1')
 #4 {main}

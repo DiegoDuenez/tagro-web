@@ -43,7 +43,7 @@ class Usuario extends Model{
 
                 $this->insert([
                     'usuario' => $usuario,
-                    'password' => Hash::make($contrasenia)
+                    'contrasenia' => Hash::make($contrasenia)
                 ])->exec();
 
                 return json(
@@ -84,7 +84,7 @@ class Usuario extends Model{
                 
                 $this->update([
                     'usuario' => $usuario,
-                    'password' => Hash::make($contrasenia)
+                    'contrasenia' => Hash::make($contrasenia)
                 ])
                 ->where('id','=',$id)
                 ->exec();
@@ -113,7 +113,7 @@ class Usuario extends Model{
 
     }
 
-    public function login($usuario, $password){
+    public function login($usuario, $contrasenia){
 
 
         $usuario = $this->select(['*'])
@@ -121,14 +121,16 @@ class Usuario extends Model{
         ->where("usuarios.status", "=", 1)
         ->limit(1)
         ->get();
+
+        
        
         if($usuario){
-            if(Hash::verify($password, $usuario[0]['contrasenia'])){
+            if(Hash::verify($contrasenia, $usuario[0]['contrasenia'])){
 
                 return json(
                     [
                         'status' => 'success',
-                        'data' => $usuario,
+                        'data' => $usuario[0],
                         'message' => ''
                     ]
                 , 200);
