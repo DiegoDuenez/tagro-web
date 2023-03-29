@@ -14,6 +14,12 @@ switch($func){
 
         break;
 
+    case 'categoriasActivas':
+
+        echo $Categoria->categoriasActivas();
+
+        break;
+
     case 'create':
 
         $nombre_categoria = input('nombre_categoria');

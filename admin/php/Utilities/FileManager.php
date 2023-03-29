@@ -8,9 +8,14 @@ class FileManager{
         return $_FILES[$key]['error'];
     }
 
-    public static function get($key, $property)
+    public static function get($key, $property = null)
     {
-        return $_FILES[$key][$property];
+        if($property){
+            return $_FILES[$key][$property];
+        }
+        else{
+            return $_FILES[$key];
+        }
     }
 
     public static function moveTo($from, $to)

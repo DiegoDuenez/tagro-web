@@ -3,7 +3,7 @@
 
 <head>
     
-    <title>TAGRO | Categorías</title>
+    <title>TAGRO | Proyectos</title>
     <?php include 'templates/header.php'; ?>
 
 </head>
@@ -22,12 +22,13 @@
                         <div class="col-8">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title"><i class="fa-solid fa-grid-2"></i> Categorías registradas</h3>
+                                    <h3 class="card-title"><i class="fa-solid fa-folder"></i> Proyectos registrados</h3>
                                 </div>
                                 <div class="card-body">
                                     <table class="table w-100" id="tabla">
                                         <thead>
                                             <tr>
+                                                <th scope="col" class="text-center">Proyecto</th>
                                                 <th scope="col" class="text-center">Categoría</th>
                                                 <th scope="col" class="text-center">Estatus</th>
                                                 <th scope="col" class="text-center">Acciones</th>
@@ -44,17 +45,27 @@
                         <div class="col-4">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title" id="formulario_titulo">Registrar categoría</h3>
+                                    <h3 class="card-title" id="formulario_titulo">Registrar proyecto</h3>
                                 </div>
                                 <div class="card-body">
 
                                     <form id="formulario">
                         
                                         <div class="form-group mt-2">
-                                            <label for="inp_categoria">Nombre categoría <span class="text-danger" title="Campo obligatorio">*</span></label>
-                                            <input class="form-control" id="inp_categoria" placeholder="Nombre categoría" required />
+                                            <label for="inp_proyecto">Nombre proyecto <span class="text-danger" title="Campo obligatorio">*</span></label>
+                                            <input class="form-control" id="inp_proyecto" placeholder="Nombre proyecto" required />
+                                        </div>
+
+                                        <div class="form-group mt-2">
+                                            <label for="select_categoria">Categoría <span class="text-danger" title="Campo obligatorio">*</span></label>
+                                            <select class="form-control" name="categoria" id="select_categoria"></select>
                                         </div>
                                         
+                                        <div class="form-group mt-2">
+                                            <label for="inp_imagenes">Imagenes <span class="text-danger" title="Campo obligatorio">*</span></label>
+                                            <input class="form-control-file imagenes" id="inp_imagenes" placeholder="Imagenes" type="file" multiple required />
+                                        </div>
+
                                     </form>
 
                                     <div class="d-flex justify-content-end" style="gap: 1rem">
@@ -76,7 +87,7 @@
 
     <?php include 'templates/scripts.php' ?>
     <script src="js/auth.js"></script>
-    <script src="js/categorias.js"></script>
+    <script src="js/proyectos.js"></script>
 
 
 </body>

@@ -110,7 +110,7 @@ function initElements(){
 function getCategorias(){
 
     $.blockUI({
-        message: "<h4> TRAYENDO USUARIOS...</h4>",
+        message: "<h4> TRAYENDO CATEGORÍAS...</h4>",
         css: { backgroundColor: null, color: "#fff", border: null },
       });
     

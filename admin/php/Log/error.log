@@ -26,3 +26,17 @@ Stack trace:
 #2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\Usuario.php(90): Model->exec()
 #3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(32): Usuario->edit('dduenez', '123', '1')
 #4 {main}
+[29/03/23 13:43:23] Error: PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sefinsa.png' in 'field list' in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:121
+Stack trace:
+#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(121): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(351): Database->execute('INSERT INTO ima...', Array, Object(Closure))
+#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Proyectos\Proyecto.php(59): Model->exec()
+#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Proyectos\App.php(28): Proyecto->create('Otro proyecto', '2', Array)
+#4 {main}
+[29/03/23 13:45:07] Error: PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'sefinsa.png' in 'field list' in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:121
+Stack trace:
+#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(121): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(351): Database->execute('INSERT INTO ima...', Array, Object(Closure))
+#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Proyectos\Proyecto.php(59): Model->exec()
+#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Proyectos\App.php(28): Proyecto->create('Otros proyectos', '2', Array)
+#4 {main}

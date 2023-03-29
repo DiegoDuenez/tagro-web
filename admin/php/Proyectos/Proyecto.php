@@ -3,6 +3,7 @@
 include '../Utilities/Model.php';
 include '../Utilities/Hash.php';
 include '../Utilities/Response.php';
+require '../Utilities/FileManager.php';
 
 class Proyecto extends Model{
 
@@ -11,7 +12,8 @@ class Proyecto extends Model{
     public function index()
     {
 
-        $proyectos = $this->select()
+        $proyectos = $this->select(["proyectos.*", "categorias.nombre_categoria"])
+        ->join("categorias", "categorias.id", "=", "proyectos.categoria_id")
         ->get();
         
         return json(
@@ -24,7 +26,7 @@ class Proyecto extends Model{
 
     }
 
-    public function create($nombre_proyecto, $categoria_id)
+    public function create($nombre_proyecto, $categoria_id, $imagenes)
     {
 
         try{
@@ -41,10 +43,37 @@ class Proyecto extends Model{
             }
             else{
 
-                $this->insert([
+                
+                if($this->insert([
                     'nombre_proyecto' => $nombre_proyecto,
                     'categoria_id' => $categoria_id 
-                ])->exec();
+                ])->exec()){
+
+                    $proyecto_id = $this->lastId();
+                    
+                    for($i = 0; $i < count($imagenes['name']); $i++){
+
+                        $nombre = $imagenes['name'][$i];
+                        $ruta = "../../../resources/proyectos/".$nombre;
+
+                        $principal = ($i == 0 ? '1' : 0);
+                        
+                        if($this->rawStatment("INSERT INTO imagenes (nombre_imagen, principal) VALUES ('$nombre', '$principal')")->exec()){
+
+                            $imagen_id = $this->lastIdIn("imagenes");
+
+                            $this->rawStatment("INSERT INTO imagenes_proyectos (proyecto_id, imagen_id) VALUES ($proyecto_id, $imagen_id)")->exec();
+
+                            FileManager::moveTo($imagenes['tmp_name'][$i],$ruta);
+
+                        }
+                        
+        
+                    }
+
+                }
+
+
 
                 return json(
                     [

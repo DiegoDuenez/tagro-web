@@ -24,6 +24,23 @@ class Categoria extends Model{
 
     }
 
+    public function categoriasActivas()
+    {
+
+        $categorias = $this->select()
+        ->where("status","=","1")
+        ->get();
+        
+        return json(
+            [
+                'status' => 'success',
+                'data' => $categorias,
+                'message' => '',
+            ]
+        , 200);
+
+    }
+
     public function create($nombre_categoria)
     {
 
