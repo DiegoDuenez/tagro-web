@@ -27,7 +27,7 @@ switch($func){
         $id = input('id');
         $nombre_categoria = input('nombre_categoria');
 
-        echo $Categoria->edit($nombre_categoria, $contrasenia, $id);
+        echo $Categoria->edit($nombre_categoria, $id);
 
         break;
 

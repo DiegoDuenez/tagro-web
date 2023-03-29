@@ -35,19 +35,19 @@ $ruta = basename($_SERVER['PHP_SELF']);
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <li class="nav-item " id="usuarios">
-                                <a href="perfiles.php" class="nav-link <?php if ($ruta == 'usuarios.php') echo ' active'; ?>">
+                                <a href="usuarios.php" class="nav-link <?php if ($ruta == 'usuarios.php') echo ' active'; ?>">
                                 <i class="fa-solid fa-users"></i>
                                     <p>Usuarios</p>
                                 </a>
                             </li>
                             <li class="nav-item " id="usuarios">
-                                <a href="perfiles.php" class="nav-link <?php if ($ruta == 'categorias.php') echo ' active'; ?>">
+                                <a href="categorias.php" class="nav-link <?php if ($ruta == 'categorias.php') echo ' active'; ?>">
                                 <i class="fa-solid fa-grid-2"></i>
-                                    <p>Categorias</p>
+                                    <p>Categorías</p>
                                 </a>
                             </li>
                             <li class="nav-item " id="usuarios">
-                                <a href="perfiles.php" class="nav-link <?php if ($ruta == 'proyectos.php') echo ' active'; ?>">
+                                <a href="proyectos.php" class="nav-link <?php if ($ruta == 'proyectos.php') echo ' active'; ?>">
                                     <i class="fa-solid fa-folder"></i>
                                     <p>Proyectos</p>
                                 </a>

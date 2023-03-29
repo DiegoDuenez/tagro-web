@@ -3,7 +3,7 @@
 
 <head>
     
-    <title>TAGRO | Usuarios</title>
+    <title>TAGRO | Categorías</title>
     <?php include 'templates/header.php'; ?>
 
 </head>
@@ -17,17 +17,18 @@
         <div class="content-wrapper">
             <div class="content">
                 <div class="container-fluid">
+
                     <div class="row p-3 pt-5">
                         <div class="col-8">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title"><i class="fa-solid fa-users"></i> Usuarios registrados</h3>
+                                    <h3 class="card-title"><i class="fa-solid fa-grid-2"></i> Categorías registradas</h3>
                                 </div>
                                 <div class="card-body">
                                     <table class="table w-100" id="tabla">
                                         <thead>
                                             <tr>
-                                                <th scope="col" class="text-center">Usuario</th>
+                                                <th scope="col" class="text-center">Categoría</th>
                                                 <th scope="col" class="text-center">Estatus</th>
                                                 <th scope="col" class="text-center">Acciones</th>
                                             </tr>
@@ -43,22 +44,17 @@
                         <div class="col-4">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title" id="formulario_titulo">Registrar usuario</h3>
+                                    <h3 class="card-title" id="formulario_titulo">Registrar categoría</h3>
                                 </div>
                                 <div class="card-body">
 
                                     <form id="formulario">
                         
                                         <div class="form-group mt-2">
-                                            <label for="inp_usuario">Usuario <span class="text-danger" title="Campo obligatorio">*</span></label>
-                                            <input class="form-control" id="inp_usuario" placeholder="Usuario" required />
+                                            <label for="inp_categoria">Nombre categoria <span class="text-danger" title="Campo obligatorio">*</span></label>
+                                            <input class="form-control" id="inp_categoria" placeholder="Nombre categoria" required />
                                         </div>
                                         
-                                        <div class="form-group mt-2">
-                                            <label for="inp_password">Contraseña <span id="lb_contrasenia" class="text-danger" title="Campo obligatorio">*</span></label>
-                                            <input class="form-control" id="inp_password" type="password" placeholder="Contraseña" />
-                                        </div>
-
                                     </form>
 
                                     <div class="d-flex justify-content-end" style="gap: 1rem">
@@ -80,7 +76,7 @@
 
     <?php include 'templates/scripts.php' ?>
     <script src="js/auth.js"></script>
-    <script src="js/usuarios.js"></script>
+    <script src="js/categorias.js"></script>
 
 
 </body>

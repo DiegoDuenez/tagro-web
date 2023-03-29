@@ -1,4 +1,4 @@
-const DIRECCION = 'php/Usuarios/App.php';
+const DIRECCION = 'php/Categorias/App.php';
 
 var tabla;
 var formulario
@@ -8,7 +8,6 @@ var boton_cancelar_formulario;
 var editar = false;
 var formulario_titulo;
 var idEditar = 0;
-var lb_contrasenia;
 
 $(document).ready(function () {
 
@@ -23,7 +22,6 @@ function initElements(){
     boton_formulario = $('#boton_formulario')
     formulario_titulo = $('#formulario_titulo')
     boton_cancelar_formulario = $('#boton_cancelar_formulario')
-    lb_contrasenia = $('#lb_contrasenia')
     
     tabla = $("#tabla").DataTable({
         pageLength: 5,
@@ -59,7 +57,7 @@ function initElements(){
         if(editar){
 
             inputs.each(function (e) {
-                if (inputs[0].value == "" || inputs[0].value == null) {
+                if (inputs[e].value == "" || inputs[e].value == null) {
                   Swal.fire({
                     icon: "warning",
                     title: "Campos vacíos",
@@ -73,7 +71,7 @@ function initElements(){
             });
 
             if (dataValid) {
-                editarUsuario(idEditar, inputs[0].value, inputs[1].value, function () {
+                editarCategoria(idEditar, inputs[0].value, function () {
                     reiniciarFormulario()
                 })
             }
@@ -95,7 +93,7 @@ function initElements(){
             });
 
             if (dataValid) {
-                registrarUsuario(inputs[0].value, inputs[1].value, function () {
+                registrarCategoria(inputs[0].value, function () {
                     clearInputs(inputs)
                 })
             }
@@ -103,12 +101,13 @@ function initElements(){
 
     })
 
-    getUsuarios()
+    getCategorias()
 
 }
 
 
-function getUsuarios(){
+
+function getCategorias(){
 
     $.blockUI({
         message: "<h4> TRAYENDO USUARIOS...</h4>",
@@ -132,7 +131,6 @@ function getUsuarios(){
     
             for (var i = 0; i < response.data.length; i++) {
 
-
                 let status;
                 let JSONobject = JSON.stringify(response.data[i])
 
@@ -143,14 +141,14 @@ function getUsuarios(){
                 }
 
                 tabla.row.add([
-                    response.data[i].usuario,
+                    response.data[i].nombre_categoria,
                     status,
-                    "<button class='btn btn-warning' title='Editar usuario' onclick='llenarFormulario(" +JSONobject + ")'><i class='fa-solid fa-pen-to-square' ></i></button>"+
+                    "<button class='btn btn-warning' title='Editar categoría' onclick='llenarFormulario(" +JSONobject + ")'><i class='fa-solid fa-pen-to-square' ></i></button>"+
                     `
                     ${
                         response.data[i].status == 1
-                            ? `<button class="btn btn-danger btn_eliminar_usuario" onclick="desactivar( ${response.data[i].id})" title="Desactivar usuario"><i class="fa-solid fa-ban" ></i></button>`
-                            : `<button class="btn btn-success btn_activar_usuario" onclick="activar(${response.data[i].id})" title="Activar usuario"><i class="fa-regular fa-circle-check"></i></button>`
+                            ? `<button class="btn btn-danger" onclick="desactivar( ${response.data[i].id})" title="Desactivar categoría"><i class="fa-solid fa-ban" ></i></button>`
+                            : `<button class="btn btn-success" onclick="activar(${response.data[i].id})" title="Activar categoría"><i class="fa-regular fa-circle-check"></i></button>`
                         }
                     `
                 ]);
@@ -191,109 +189,43 @@ function llenarFormulario(JSONobject){
 
     boton_cancelar_formulario.removeClass('d-none')
     boton_formulario.text("Guardar")
-    formulario_titulo.text("Editar usuario")
-    lb_contrasenia.addClass("d-none")
+    formulario_titulo.text("Editar categoría")
 
     let inputs = formulario.find('input')
 
-    inputs[0].value = JSONobject.usuario
+    inputs[0].value = JSONobject.nombre_categoria
     idEditar = JSONobject.id
 
 }
 
-function editarUsuario(id, usuario, contrasenia = null, callbackOnSuccess = undefined){
 
-    if(contrasenia){
-        var datasend = {
-            func: "edit",
-            id,
-            usuario,
-            contrasenia,
-        };
-    }
-    else{
-        var datasend = {
-            func: "edit",
-            id,
-            usuario
-        };
-    }
-
-    $.ajax({
-
-        type: "POST",
-        url: DIRECCION,
-        dataType: "json",
-        data: JSON.stringify(datasend),
-        success: function (response) {
-
-          if (typeof callbackOnSuccess == "function") callbackOnSuccess();
-    
-          Swal.fire({
-            icon: "success",
-            title: response.message,
-            timer: 1000,
-            showCancelButton: false,
-            showConfirmButton: false,
-          }).then(function () {
-            
-            getUsuarios();
-        
-            });
-
-        },
-        error: function (e) {
-          if ("responseJSON" in e) {
-            Swal.fire({
-              icon: "error",
-              title: "Oops...",
-              text: e.responseJSON.message,
-            });
-          } else {
-            Swal.fire({
-              icon: "error",
-              input: "textarea",
-              inputValue: e.responseText,
-              title: "Oops...",
-              text: "Error Interno del Servidor",
-            });
-          }
-        },
-        complete: function () {
-          $.unblockUI();
-        },
-    });
-    
-}
-
-function registrarUsuario(usuario, contrasenia = null,callbackOnSuccess = undefined){
+function registrarCategoria(nombre_categoria, callbackOnSuccess = undefined){
 
     var datasend = {
         func: "create",
-        usuario,
-        contrasenia,
+        nombre_categoria
     };
 
     $.ajax({
+
         type: "POST",
         url: DIRECCION,
         dataType: "json",
         data: JSON.stringify(datasend),
         success: function (response) {
 
-          
-          if (typeof callbackOnSuccess == "function") callbackOnSuccess();
+            if (typeof callbackOnSuccess == "function") callbackOnSuccess();
     
-          Swal.fire({
-            icon: "success",
-            title: response.message,
-            timer: 1000,
-            showCancelButton: false,
-            showConfirmButton: false,
-          }).then(function () {
+            Swal.fire({
+                icon: "success",
+                title: response.message,
+                timer: 1000,
+                showCancelButton: false,
+                showConfirmButton: false,
+            }).then(function () {
+                
+                getCategorias()
             
-            getUsuarios();
-        
             });
 
         },
@@ -320,24 +252,79 @@ function registrarUsuario(usuario, contrasenia = null,callbackOnSuccess = undefi
     });
     
 }
-
 
 function reiniciarFormulario(){
     editar = false
     idEditar = 0
     boton_cancelar_formulario.addClass('d-none')
     boton_formulario.text("Registrar")
-    formulario_titulo.text("Registrar usuario")
-    lb_contrasenia.removeClass("d-none")
+    formulario_titulo.text("Registrar categoría")
     let inputs = formulario.find('input')
     clearInputs(inputs)
 }
+
+function editarCategoria(id,nombre_categoria, callbackOnSuccess = undefined){
+
+    var datasend = {
+        func: "edit",
+        id,
+        nombre_categoria
+    };
+
+    $.ajax({
+
+        type: "POST",
+        url: DIRECCION,
+        dataType: "json",
+        data: JSON.stringify(datasend),
+        success: function (response) {
+
+            if (typeof callbackOnSuccess == "function") callbackOnSuccess();
+    
+            Swal.fire({
+                icon: "success",
+                title: response.message,
+                timer: 1000,
+                showCancelButton: false,
+                showConfirmButton: false,
+            }).then(function () {
+                
+                getCategorias()
+            
+            });
+
+        },
+        error: function (e) {
+          if ("responseJSON" in e) {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: e.responseJSON.message,
+            });
+          } else {
+            Swal.fire({
+              icon: "error",
+              input: "textarea",
+              inputValue: e.responseText,
+              title: "Oops...",
+              text: "Error Interno del Servidor",
+            });
+          }
+        },
+        complete: function () {
+          $.unblockUI();
+        },
+    });
+    
+}
+
+
 
 
 function desactivar(id) {
 
     Swal.fire({
-      title: "¿Quieres desactivar al usuario?",
+      title: "¿Quieres desactivar la categoría?",
       showCancelButton: true,
       cancelButtonText: "No",
       confirmButtonText: "Sí",
@@ -358,13 +345,13 @@ function desactivar(id) {
   
                 Swal.fire({
                     icon: "success",
-                    title: "Usuario desactivado",
+                    title: "Categoría desactivada",
                     timer: 1000,
                     showCancelButton: false,
                     showConfirmButton: false,
                 }).then(function () {
                 
-                    getUsuarios();
+                    getCategorias();
             
                 });
 
@@ -394,7 +381,7 @@ function desactivar(id) {
   
 function activar(id) {
     Swal.fire({
-      title: "¿Quieres activar al usuario?",
+      title: "¿Quieres activar la categoría?",
       showCancelButton: true,
       cancelButtonText: "No",
       confirmButtonText: "Sí",
@@ -416,13 +403,13 @@ function activar(id) {
   
                 Swal.fire({
                     icon: "success",
-                    title: "Usuario activado",
+                    title: "Categoría activada",
                     timer: 1000,
                     showCancelButton: false,
                     showConfirmButton: false,
                 }).then(function () {
                     
-                    getUsuarios();
+                    getCategorias();
             
                 });
 
