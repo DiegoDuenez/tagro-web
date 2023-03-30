@@ -5,11 +5,11 @@ $(document).ready(function(){
     authGuard()
 })
 
-  /*
+
 if (localStorage.getItem("usuario") !== null) {
-    var usuario = JSON.parse(localStorage.getItem("usuario"));
-    $("#usuario").html(`<a href='usuarios.php' style='font-weight: normal;'><i class="fa-solid fa-circle-user" title='${usuario.usuario}'></i> ${usuario.usuario}</a> `);
-}*/
+    let usuario = localStorage.getItem("usuario")
+    $("#usuario").html(`<a href='usuarios.php' style='font-weight: normal;'><i class="fa-solid fa-circle-user" title='${usuario}'></i> ${usuario}</a> `);
+}
 
 function logout() {
 

@@ -35,8 +35,8 @@ function iniciarSesion(){
             if (response.status == "success") {
 
   
-              localStorage.setItem("usuario", JSON.stringify(response.data.usuario));
-              localStorage.setItem("id", JSON.stringify(response.data.id));
+              localStorage.setItem("usuario", response.data.usuario);
+              localStorage.setItem("id", response.data.id);
   
               Swal.fire({
                 icon: "success",

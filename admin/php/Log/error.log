@@ -40,3 +40,17 @@ Stack trace:
 #2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Proyectos\Proyecto.php(59): Model->exec()
 #3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Proyectos\App.php(28): Proyecto->create('Otros proyectos', '2', Array)
 #4 {main}
+[30/03/23 12:00:45] Error: PDOException: SQLSTATE[21S01]: Insert value list does not match column list: 1136 Column count doesn't match value count at row 1 in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:121
+Stack trace:
+#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(121): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(351): Database->execute('INSERT INTO ima...', Array, Object(Closure))
+#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Proyectos\Proyecto.php(103): Model->exec()
+#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Proyectos\App.php(47): Proyecto->subirImagenesProyecto(Array, '16')
+#4 {main}
+[30/03/23 12:04:46] Error: PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'undefined' in 'field list' in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:121
+Stack trace:
+#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(121): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Utilities\Model.php(351): Database->execute('INSERT INTO ima...', Array, Object(Closure))
+#2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Proyectos\Proyecto.php(107): Model->exec()
+#3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Proyectos\App.php(47): Proyecto->subirImagenesProyecto(Array, 'undefined')
+#4 {main}

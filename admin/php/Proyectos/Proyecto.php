@@ -26,7 +26,7 @@ class Proyecto extends Model{
 
     }
 
-    public function create($nombre_proyecto, $categoria_id, $imagenes)
+    public function create($nombre_proyecto, $categoria_id)
     {
 
         try{
@@ -37,7 +37,7 @@ class Proyecto extends Model{
                     [
                         'status' => 'error',
                         'data' => null,
-                        'message' => "El proyecto $nombre_proyecto ya fue registrada",
+                        'message' => "El proyecto $nombre_proyecto ya fue registrado",
                     ]
                 , 400);
             }
@@ -49,7 +49,7 @@ class Proyecto extends Model{
                     'categoria_id' => $categoria_id 
                 ])->exec()){
 
-                    $proyecto_id = $this->lastId();
+                    /*$proyecto_id = $this->lastId();
                     
                     for($i = 0; $i < count($imagenes['name']); $i++){
 
@@ -69,19 +69,18 @@ class Proyecto extends Model{
                         }
                         
         
-                    }
+                    }*/
+
+                    return json(
+                        [
+                            'status' => 'success',
+                            'data' => null,
+                            'message' => 'El proyecto se registro correctamente',
+                        ]
+                    , 201);
 
                 }
-
-
-
-                return json(
-                    [
-                        'status' => 'success',
-                        'data' => null,
-                        'message' => 'El proyecto se registro correctamente',
-                    ]
-                , 201);
+               
             }
 
 
@@ -91,6 +90,35 @@ class Proyecto extends Model{
             die();
 
         }
+
+    }
+
+    public function subirImagenesProyecto($imagenes, $proyecto_id){
+
+        for($i = 0; $i < count($imagenes['name']); $i++){
+
+            $nombre = $imagenes['name'][$i];
+            $ruta = "../../../resources/proyectos/".$nombre;
+
+            if($this->rawStatment("INSERT INTO imagenes (nombre_imagen) VALUES ('$nombre')")->exec()){
+
+                $imagen_id = $this->lastIdIn("imagenes");
+
+                $this->rawStatment("INSERT INTO imagenes_proyectos (proyecto_id, imagen_id) VALUES ($proyecto_id, $imagen_id)")->exec();
+
+                FileManager::moveTo($imagenes['tmp_name'][$i],$ruta);
+
+            }
+
+        }
+
+        return json(
+            [
+                'status' => 'success',
+                'data' => ['proyecto_id' => $proyecto_id],
+                'message' => 'Se subieron las imagenes correctamente',
+            ]
+        , 201);
 
     }
 

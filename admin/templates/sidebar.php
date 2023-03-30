@@ -7,8 +7,8 @@ $ruta = basename($_SERVER['PHP_SELF']);
 ?>
 
 <aside class="main-sidebar sidebar-light-secondary elevation-4">
-    <a href="usuarios.php" class="brand-link" style="display: flex; justify-content:center" >
-        <img src="../resources/logo_oscuro.png" alt="TAGRO" class="brand-image" title="TAGRO" >
+    <a href="usuarios.php" class="brand-link" style="display: flex; justify-content:center; padding: 0.8rem" >
+        <img src="../resources/logo_oscuro.png" alt="TAGRO" class="brand-image" title="TAGRO" style="max-height: 60px;">
         <br>
         <span span class="brand-text font-weight-light  d-none">TAGRO</span>
     </a>

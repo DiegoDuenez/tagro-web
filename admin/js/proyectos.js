@@ -4,6 +4,7 @@ var tabla;
 var formulario
 var boton_formulario;
 var boton_cancelar_formulario;
+var boton_subir_imagenes;
 
 var editar = false;
 var formulario_titulo;
@@ -23,6 +24,7 @@ function initElements(){
     boton_formulario = $('#boton_formulario')
     formulario_titulo = $('#formulario_titulo')
     boton_cancelar_formulario = $('#boton_cancelar_formulario')
+    boton_subir_imagenes = $('#boton_subir_imagenes')
     
     tabla = $("#tabla").DataTable({
         pageLength: 5,
@@ -60,25 +62,40 @@ function initElements(){
 
         if(editar){
 
-            /*inputs.each(function (e) {
-                if (inputs[0].value == "" || inputs[0].value == null) {
-                  Swal.fire({
-                    icon: "warning",
-                    title: "Campos vacíos",
-                    text: "Necesitas llenar todos los campos",
-                    timer: 1000,
-                    showCancelButton: false,
-                    showConfirmButton: false,
-                  });
-                  dataValid = false;
-                }
-            });
+          inputs.each(function (e) {
+            if (inputs[e].value == "" || inputs[e].value == null) {
+                Swal.fire({
+                  icon: "warning",
+                  title: "Campos vacíos",
+                  text: "Necesitas llenar todos los campos",
+                  timer: 1000,
+                  showCancelButton: false,
+                  showConfirmButton: false,
+                });
+                dataValid = false;
+              }
+          });
 
-            if (dataValid) {
-                editarProyecto(idEditar, inputs[0].value, inputs[1].value, function () {
-                    reiniciarFormulario()
-                })
-            }*/
+          selects.each(function (e) {
+              if (selects[e].value == 0 || selects[e].value == null) {
+                Swal.fire({
+                  icon: "warning",
+                  title: "Campos vacíos",
+                  text: "Necesitas llenar todos los campos",
+                  timer: 1000,
+                  showCancelButton: false,
+                  showConfirmButton: false,
+                });
+                dataValid = false;
+              }
+          });
+
+          if (dataValid) {
+              editarProyecto(idEditar, inputs[0].value, selects[0].value, function () {
+                  reiniciarFormulario()
+              })
+          }
+
         }
         else{
 
@@ -97,7 +114,7 @@ function initElements(){
             });
 
             selects.each(function (e) {
-                if (selects[e].value == "" || selects[e].value == null) {
+                if (selects[e].value == 0 || selects[e].value == null) {
                   Swal.fire({
                     icon: "warning",
                     title: "Campos vacíos",
@@ -111,13 +128,37 @@ function initElements(){
             });
 
             if (dataValid) {
-                registrarProyecto(inputs[0].value, selects[0].value, inputs_file[0].files, function () {
-                    clearInputs(inputs)
-                    clearInputs(selects)
-
-                })
+               
+                registrarProyecto(inputs[0].value, selects[0].value, function () {
+                  clearInputs(inputs)
+                  clearInputs(selects)
+              })
             }
         }
+
+    })
+
+    boton_subir_imagenes.click(function(){
+
+      let input_imagenes = $('#inp_imagenes')
+
+      if(input_imagenes[0].files.length > 0){
+
+        subirImagenesProyecto(input_imagenes[0].files, idEditar, function(){
+          clearInputs(input_imagenes)
+        })
+
+      }
+      else{
+        Swal.fire({
+          icon: "warning",
+          title: "Campos vacíos",
+          text: "No se han colocado imagenes para subir",
+          timer: 1000,
+          showCancelButton: false,
+          showConfirmButton: false,
+        });
+      }
 
     })
 
@@ -178,8 +219,9 @@ function getProyectos(){
                             ? `<button class="btn btn-danger" onclick="desactivar( ${response.data[i].id})" title="Desactivar proyecto"><i class="fa-solid fa-ban" ></i></button>`
                             : `<button class="btn btn-success" onclick="activar(${response.data[i].id})" title="Activar proyecto"><i class="fa-regular fa-circle-check"></i></button>`
                         }
-                        <button class="btn btn-info" onclick="galeria(${response.data[i].id})" title="Ver galería"><i class="fa-regular fa-images"></i></button>
-                    `
+                    `+
+                    "<button class='btn btn-info' onclick='galeria("+JSONobject + ")' data-toggle='modal' data-target='#modal_galeria' title='Ver galería'><i class='fa-regular fa-images'></i></button>"
+                    
                 ]);
 
             }
@@ -213,51 +255,51 @@ function getProyectos(){
 
 function getCategorias(){
 
-      var datasend = {
-        func: "categoriasActivas",
-      };
-    
-      $.ajax({
-        type: "POST",
-        url: 'php/Categorias/App.php',
-        dataType: "json",
-        data: JSON.stringify(datasend),
-        success: function (response) {
+  var datasend = {
+    func: "categoriasActivas",
+  };
 
-          if (response.status == "success") {
-    
-            $(`#select_categoria`).empty()
-            $("#select_categoria").append(`<option value="0" >Seleccionar categoría</option>`);
+  $.ajax({
+    type: "POST",
+    url: 'php/Categorias/App.php',
+    dataType: "json",
+    data: JSON.stringify(datasend),
+    success: function (response) {
 
-            for (var i = 0; i < response.data.length; i++) {
-                
-                $("#select_categoria").append(`
-                    <option name="${response.data[i].nombre_categoria}" value="${response.data[i].id}">${response.data[i].nombre_categoria}</option>
-                `);
-                
-            }
+      if (response.status == "success") {
 
-          }
-        },
-        error: function (e) {
-          if('responseJSON' in e){
-            Swal.fire({
-              icon: "error",
-              title: "Oops...",
-              text: e.responseJSON.message,
-            });
-          }
-          else{
-            Swal.fire({
-              icon: "error",
-              input: 'textarea',
-              inputValue: e.responseText,
-              title: "Oops...",
-              text: 'Error Interno del Servidor',
-            });
-          }
-        },
-    });
+        $(`#select_categoria`).empty()
+        $("#select_categoria").append(`<option value="0" >Seleccionar categoría</option>`);
+
+        for (var i = 0; i < response.data.length; i++) {
+            
+            $("#select_categoria").append(`
+                <option name="${response.data[i].nombre_categoria}" value="${response.data[i].id}">${response.data[i].nombre_categoria}</option>
+            `);
+            
+        }
+
+      }
+    },
+    error: function (e) {
+      if('responseJSON' in e){
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: e.responseJSON.message,
+        });
+      }
+      else{
+        Swal.fire({
+          icon: "error",
+          input: 'textarea',
+          inputValue: e.responseText,
+          title: "Oops...",
+          text: 'Error Interno del Servidor',
+        });
+      }
+    },
+  });
 
 }
 
@@ -295,9 +337,9 @@ function reiniciarFormulario(){
 }
 
 
-function registrarProyecto(nombre_proyecto, categoria_id, imagenes, callbackOnSuccess = undefined){
+function registrarProyecto(nombre_proyecto, categoria_id, callbackOnSuccess = undefined){
 
-  var datasend = new FormData();
+  /*var datasend = new FormData();
 
 
   $.each(imagenes, function (i, file) {
@@ -307,7 +349,6 @@ function registrarProyecto(nombre_proyecto, categoria_id, imagenes, callbackOnSu
   datasend.append("func", "create")
   datasend.append("nombre_proyecto", nombre_proyecto)
   datasend.append("categoria_id", categoria_id)
- // datasend.append("imagenes", imagenes)
 
   $.ajax({
     url: DIRECCION,
@@ -353,8 +394,173 @@ function registrarProyecto(nombre_proyecto, categoria_id, imagenes, callbackOnSu
     complete: function () {
       $.unblockUI();
     },
+  });*/
+
+  var datasend = {
+    func: "create",
+    nombre_proyecto,
+    categoria_id,
+  };
+
+  $.ajax({
+      type: "POST",
+      url: DIRECCION,
+      dataType: "json",
+      data: JSON.stringify(datasend),
+      success: function (response) {
+        
+        if (typeof callbackOnSuccess == "function") callbackOnSuccess();
+
+        Swal.fire({
+          icon: "success",
+          title: response.message,
+          timer: 1000,
+          showCancelButton: false,
+          showConfirmButton: false,
+        }).then(function () {
+            
+            getProyectos()
+        
+        });
+
+      },
+      error: function (e) {
+        if ("responseJSON" in e) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: e.responseJSON.message,
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            input: "textarea",
+            inputValue: e.responseText,
+            title: "Oops...",
+            text: "Error Interno del Servidor",
+          });
+        }
+      },
+      complete: function () {
+        $.unblockUI();
+      },
   });
-  
+    
+}
+
+
+function editarProyecto(id,nombre_proyecto, categoria_id, callbackOnSuccess = undefined){
+
+  var datasend = {
+    func: "edit",
+    id,
+    nombre_proyecto,
+    categoria_id,
+  };
+
+  $.ajax({
+      type: "POST",
+      url: DIRECCION,
+      dataType: "json",
+      data: JSON.stringify(datasend),
+      success: function (response) {
+        
+        if (typeof callbackOnSuccess == "function") callbackOnSuccess();
+
+        Swal.fire({
+          icon: "success",
+          title: response.message,
+          timer: 1000,
+          showCancelButton: false,
+          showConfirmButton: false,
+        }).then(function () {
+            
+            getProyectos()
+        
+        });
+
+      },
+      error: function (e) {
+        if ("responseJSON" in e) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: e.responseJSON.message,
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            input: "textarea",
+            inputValue: e.responseText,
+            title: "Oops...",
+            text: "Error Interno del Servidor",
+          });
+        }
+      },
+      complete: function () {
+        $.unblockUI();
+      },
+  });
+    
+}
+
+
+function subirImagenesProyecto(imagenes, proyecto_id, callbackOnSuccess = undefined){
+
+  var datasend = new FormData();
+
+  $.each(imagenes, function (i, file) {
+    datasend.append("imagenes[]", file);
+  });
+
+  datasend.append("func", "subirImagenesProyecto")
+  datasend.append("proyecto_id", proyecto_id)
+
+  $.ajax({
+    url: DIRECCION,
+    data: datasend,
+    cache: false,
+    contentType: false,
+    processData: false,
+    type: "POST",
+    success: function (response) {
+
+      if (typeof callbackOnSuccess == "function") callbackOnSuccess();
+
+      Swal.fire({
+          icon: "success",
+          title: response.message,
+          timer: 1000,
+          showCancelButton: false,
+          showConfirmButton: false,
+      }).then(function () {
+        getGaleria(response.data.proyecto_id)
+      });
+
+    },
+    error: function (e) {
+      if ("responseJSON" in e) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: e.responseJSON.message,
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          input: "textarea",
+          inputValue: e.responseText,
+          title: "Oops...",
+          text: "Error Interno del Servidor",
+        });
+      }
+    },
+    complete: function () {
+      $.unblockUI();
+    },
+
+  });
+
 }
 
 
@@ -473,4 +679,200 @@ function activar(id) {
       });
     }
   });
+}
+
+
+function galeria(JSONobject){
+
+  let proyecto_id = JSONobject.id
+  let nombre_proyecto = JSONobject.nombre_proyecto
+  idEditar = proyecto_id
+
+  $('#modal_title_galeria').text("Galería " + nombre_proyecto)
+
+  getGaleria(proyecto_id)
+
+}
+
+
+function getGaleria(proyecto_id){
+
+  var datasend = {
+    func: "imagenesProyecto",
+    proyecto_id
+  };
+
+  $.ajax({
+    type: "POST",
+    url: 'php/Imagenes/App.php',
+    dataType: "json",
+    data: JSON.stringify(datasend),
+    success: function (response) {
+
+      if (response.status == "success") {
+
+        $('#galeria-contenedor').empty()
+
+        for (var i = 0; i < response.data.length; i++) {
+
+
+          let buttonPrincipal = ""
+          let JSONobject = JSON.stringify(response.data[i])
+
+          if(response.data[i].principal == 1){
+            buttonPrincipal = "<button class='btn btn-warning btn_principal' onclick='cambiarImagenPrincipal(this,"+JSONobject+")' title='Imagen principal'><i class='fa-solid fa-star'></i></button>"
+          }
+          else{
+            buttonPrincipal = "<button class='btn btn-secondary btn_principal' onclick='cambiarImagenPrincipal(this,"+JSONobject+")'><i class='fa-solid fa-star'></i></button>"
+
+          }
+
+
+          $('#galeria-contenedor').append(`
+
+            <div class="custom-card">
+
+              <div class="custom-card__img">
+                  <img src="../resources/proyectos/${response.data[i].nombre_imagen}" alt="Imagen" >
+              </div>
+
+              <div class="custom-card__footer">
+
+                  ${buttonPrincipal}
+                  <button class="btn btn-danger" title="Eliminar imagen" onclick='eliminar(${response.data[i].id})'><i class="fa-regular fa-trash-can"></i></button>
+
+              </div>
+
+            </div>
+          
+          `)
+
+        }
+
+      }
+    },
+    error: function (e) {
+      if('responseJSON' in e){
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: e.responseJSON.message,
+        });
+      }
+      else{
+        Swal.fire({
+          icon: "error",
+          input: 'textarea',
+          inputValue: e.responseText,
+          title: "Oops...",
+          text: 'Error Interno del Servidor',
+        });
+      }
+    },
+  });
+
+}
+
+function cambiarImagenPrincipal(button, JSONobject){
+
+  let buttons = document.getElementsByClassName("btn_principal");
+  for (i = 0; i < buttons.length; i++) {
+      $(buttons[i]).removeClass('btn-warning')
+      $(buttons[i]).addClass('btn-secondary')
+      $(buttons[i]).attr("title","")
+  }
+  $(button).removeClass('btn-secondary')
+  $(button).addClass('btn-warning')
+  $(button).attr("title","Imagen principal")
+
+  var datasend ={
+    func: 'cambiarImagenPrincipal',
+    id: JSONobject.id,
+    proyecto_id: JSONobject.proyecto_id
+  }
+
+  $.ajax({
+    type: "POST",
+    url: 'php/Imagenes/App.php',
+    data: JSON.stringify(datasend),
+    dataType: "json",
+    success: function (response) {
+    },
+    error: function (e) {
+      if ("responseJSON" in e) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: e.responseJSON.message,
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          input: "textarea",
+          inputValue: e.responseText,
+          title: "Oops...",
+          text: "Error Interno del Servidor",
+        });
+      }
+    },
+  });
+
+}
+
+function eliminar(id){
+
+  Swal.fire({
+    title: "¿Quieres eliminar la imagen del proyecto?",
+    showCancelButton: true,
+    cancelButtonText: "No",
+    confirmButtonText: "Sí",
+  }).then((result) => {
+    if (result.isConfirmed) {
+
+      $.ajax({
+        type: "POST",
+        url: 'php/Imagenes/App.php',
+        data: JSON.stringify({
+          func: "delete",
+          id,
+        }),
+        dataType: "json",
+        success: function (response) {
+          if (response.status == "success") {
+
+              Swal.fire({
+                  icon: "success",
+                  title: "Imagen eliminada",
+                  timer: 1000,
+                  showCancelButton: false,
+                  showConfirmButton: false,
+              }).then(function () {
+              
+                getGaleria(response.data.proyecto_id)
+          
+              });
+
+          }
+        },
+        error: function (e) {
+          if ("responseJSON" in e) {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: e.responseJSON.message,
+            });
+          } else {
+            Swal.fire({
+              icon: "error",
+              input: "textarea",
+              inputValue: e.responseText,
+              title: "Oops...",
+              text: "Error Interno del Servidor",
+            });
+          }
+        },
+      });
+    }
+  });
+
 }

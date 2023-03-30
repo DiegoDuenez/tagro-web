@@ -21,11 +21,30 @@ switch($func){
 
     case 'create':
 
-        $nombre_proyecto = formdata("nombre_proyecto");
-        $categoria_id = formdata("categoria_id");
+        $nombre_proyecto = input("nombre_proyecto");
+        $categoria_id = input("categoria_id");
+        // $imagenes = FileManager::get("imagenes");
+
+        echo $Proyecto->create($nombre_proyecto, $categoria_id);
+
+        break;
+
+    case 'edit':
+
+        $id = input("id");
+        $nombre_proyecto = input("nombre_proyecto");
+        $categoria_id = input("categoria_id");
+
+        echo $Proyecto->edit($nombre_proyecto, $categoria_id, $id);
+
+        break;
+
+    case 'subirImagenesProyecto':
+
+        $proyecto_id = formdata("proyecto_id");
         $imagenes = FileManager::get("imagenes");
 
-        echo $Proyecto->create($nombre_proyecto, $categoria_id, $imagenes);
+        echo $Proyecto->subirImagenesProyecto($imagenes, $proyecto_id);
 
         break;
 

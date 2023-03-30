@@ -336,60 +336,60 @@ function reiniciarFormulario(){
 
 function desactivar(id) {
 
-    Swal.fire({
-      title: "¿Quieres desactivar al usuario?",
-      showCancelButton: true,
-      cancelButtonText: "No",
-      confirmButtonText: "Sí",
-    }).then((result) => {
-      if (result.isConfirmed) {
+  Swal.fire({
+    title: "¿Quieres desactivar al usuario?",
+    showCancelButton: true,
+    cancelButtonText: "No",
+    confirmButtonText: "Sí",
+  }).then((result) => {
+    if (result.isConfirmed) {
 
-        $.ajax({
-          type: "POST",
-          url: DIRECCION,
-          data: JSON.stringify({
-            func: "desactivar",
-            id,
-          }),
-          dataType: "json",
-          success: function (response) {
-            if (response.status == "success") {
-              
-  
-                Swal.fire({
-                    icon: "success",
-                    title: "Usuario desactivado",
-                    timer: 1000,
-                    showCancelButton: false,
-                    showConfirmButton: false,
-                }).then(function () {
-                
-                    getUsuarios();
+      $.ajax({
+        type: "POST",
+        url: DIRECCION,
+        data: JSON.stringify({
+          func: "desactivar",
+          id,
+        }),
+        dataType: "json",
+        success: function (response) {
+          if (response.status == "success") {
             
-                });
 
-            }
-          },
-          error: function (e) {
-            if ("responseJSON" in e) {
               Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: e.responseJSON.message,
+                  icon: "success",
+                  title: "Usuario desactivado",
+                  timer: 1000,
+                  showCancelButton: false,
+                  showConfirmButton: false,
+              }).then(function () {
+              
+                  getUsuarios();
+          
               });
-            } else {
-              Swal.fire({
-                icon: "error",
-                input: "textarea",
-                inputValue: e.responseText,
-                title: "Oops...",
-                text: "Error Interno del Servidor",
-              });
-            }
-          },
-        });
-      }
-    });
+
+          }
+        },
+        error: function (e) {
+          if ("responseJSON" in e) {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: e.responseJSON.message,
+            });
+          } else {
+            Swal.fire({
+              icon: "error",
+              input: "textarea",
+              inputValue: e.responseText,
+              title: "Oops...",
+              text: "Error Interno del Servidor",
+            });
+          }
+        },
+      });
+    }
+  });
 }
   
 function activar(id) {

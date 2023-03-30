@@ -9,6 +9,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+
     <div class="wrapper">
 
         <?php include 'templates/navbar.php' ?>
@@ -61,10 +62,10 @@
                                             <select class="form-control" name="categoria" id="select_categoria"></select>
                                         </div>
                                         
-                                        <div class="form-group mt-2">
+                                        <!--<div class="form-group mt-2">
                                             <label for="inp_imagenes">Imagenes <span class="text-danger" title="Campo obligatorio">*</span></label>
                                             <input class="form-control-file imagenes" id="inp_imagenes" placeholder="Imagenes" type="file" multiple required />
-                                        </div>
+                                        </div>-->
 
                                     </form>
 
@@ -77,6 +78,37 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Galeria -->
+    <div class="modal fade" id="modal_galeria" tabindex="-1" aria-labelledby="modal_title_galeria" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal_title_galeria"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body flex-column">
+
+                    <div class="d-flex align-items-center p-3">
+                        <div class="form-group mt-2">
+                            <input class="form-control-file imagenes" id="inp_imagenes" placeholder="Imagenes" type="file" multiple required />
+                        </div>
+                        <button class="btn btn-success ml-3" id="boton_subir_imagenes">Subir imagenes</button>
+                    </div>
+
+                    <div class="d-flex flex-wrap p-3" id="galeria-contenedor">
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
                 </div>
             </div>
         </div>
