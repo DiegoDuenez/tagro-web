@@ -19,11 +19,17 @@ switch($func){
 
         break;
 
+    case 'proyectosCategoria':
+
+        $categoria_id = input("categoria_id", true);
+        echo $Proyecto->proyectosCategoria($categoria_id);
+
+        break;
+
     case 'create':
 
         $nombre_proyecto = input("nombre_proyecto");
         $categoria_id = input("categoria_id");
-        // $imagenes = FileManager::get("imagenes");
 
         echo $Proyecto->create($nombre_proyecto, $categoria_id);
 

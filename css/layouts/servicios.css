@@ -188,6 +188,7 @@
 .servicios__materiales-titulo{
     color: var(--azul);
     font-size: 3rem;
+    text-align: left;
     font-weight: bold;
 }
 

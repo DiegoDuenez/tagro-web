@@ -77,13 +77,17 @@
     color: var(--azul);
 }
 
+.proyectos__categoria--selected{
+    border-left: 3px var(--celeste) solid;
+    color: var(--azul);
+}
+
 .proyectos__card-container{
     display: flex;
     width: 80%;
     height: 100%;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
     @media screen and (min-width: 300px) and (max-width: 1000px){
         .proyectos__card-container{

@@ -26,6 +26,40 @@ class Proyecto extends Model{
 
     }
 
+    public function proyectosCategoria($categoria_id = null){
+
+        if($categoria_id){
+            $proyectos = $this->select(["proyectos.id",
+            "proyectos.nombre_proyecto", "categorias.nombre_categoria",
+            "imagenes.nombre_imagen"])
+            ->join("categorias", "categorias.id", "=", "proyectos.categoria_id")
+            ->join("imagenes_proyectos as ip", "ip.proyecto_id", '=', "proyectos.id")
+            ->join("imagenes", "imagenes.id", '=', "ip.imagen_id")
+            ->where("proyectos.categoria_id", "=", $categoria_id)
+            ->where("imagenes.principal", "=", "1")
+            ->get();
+        }
+        else{
+            $proyectos = $this->select(["proyectos.id",
+            "proyectos.nombre_proyecto", "categorias.nombre_categoria",
+            "imagenes.nombre_imagen"])
+            ->join("categorias", "categorias.id", "=", "proyectos.categoria_id")
+            ->join("imagenes_proyectos as ip", "ip.proyecto_id", '=', "proyectos.id")
+            ->join("imagenes", "imagenes.id", '=', "ip.imagen_id")
+            ->where("imagenes.principal", "=", "1")
+            ->get();
+        }
+        
+        
+        return json(
+            [
+                'status' => 'success',
+                'data' => $proyectos,
+                'message' => '',
+            ]
+        , 200);
+    }
+
     public function create($nombre_proyecto, $categoria_id)
     {
 
@@ -48,28 +82,6 @@ class Proyecto extends Model{
                     'nombre_proyecto' => $nombre_proyecto,
                     'categoria_id' => $categoria_id 
                 ])->exec()){
-
-                    /*$proyecto_id = $this->lastId();
-                    
-                    for($i = 0; $i < count($imagenes['name']); $i++){
-
-                        $nombre = $imagenes['name'][$i];
-                        $ruta = "../../../resources/proyectos/".$nombre;
-
-                        $principal = ($i == 0 ? '1' : 0);
-                        
-                        if($this->rawStatment("INSERT INTO imagenes (nombre_imagen, principal) VALUES ('$nombre', '$principal')")->exec()){
-
-                            $imagen_id = $this->lastIdIn("imagenes");
-
-                            $this->rawStatment("INSERT INTO imagenes_proyectos (proyecto_id, imagen_id) VALUES ($proyecto_id, $imagen_id)")->exec();
-
-                            FileManager::moveTo($imagenes['tmp_name'][$i],$ruta);
-
-                        }
-                        
-        
-                    }*/
 
                     return json(
                         [
