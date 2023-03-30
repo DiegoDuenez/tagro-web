@@ -27,9 +27,10 @@ class Imagen extends Model{
     public function imagenesProyecto($proyecto_id)
     {
 
-        $imagenes = $this->select(['imagenes.*', 'ip.proyecto_id', 'proyectos.nombre_proyecto'])
+        $imagenes = $this->select(['imagenes.*', 'ip.proyecto_id', 'proyectos.nombre_proyecto', 'categorias.nombre_categoria'])
         ->join("imagenes_proyectos as ip", "ip.imagen_id", "=", "imagenes.id")
         ->join("proyectos", "ip.proyecto_id", "=", "proyectos.id")
+        ->join("categorias", "categorias.id", "=", "proyectos.categoria_id")
         ->where("proyectos.id", "=", $proyecto_id)
         ->orderBy("principal", "DESC")
         ->get();

@@ -78,7 +78,7 @@ function getProyectosCategoria(button, JSONobject){
     
                  
                     proyectos_container.append(`
-                        <div class="proyectos__card" data-aos="fade-up">
+                        <div class="proyectos__card" data-aos="fade-up" id="${response.data[i].id}">
 
                             <img src="resources/proyectos/${response.data[i].nombre_imagen}" alt="" class="proyectos__card-img">
             
@@ -94,9 +94,31 @@ function getProyectosCategoria(button, JSONobject){
             
                         </div>
                     `)
-                  
+
     
                 }
+
+                const modal = new Menu({options: {element: '.modal__container', openWith: '.proyectos__card', closeWith: '#btn-modal-close', from: 'bottom',
+                    callbackOnOpen: function(){
+                        let modal_back= document.querySelector('.modal')
+                        modal_back.style.visibility = 'visible'
+
+                        let body = document.querySelector('body')
+                        body.style.overflow = 'hidden'
+
+                        getGaleria($(modal.elementClicked).attr('id'))
+
+
+
+                    },
+                    callbackOnClose: function(){
+                        let modal = document.querySelector('.modal')
+                        modal.style.visibility = 'hidden'
+                        let body = document.querySelector('body')
+                        body.style.overflow = 'auto'
+                    }  
+                }})
+                modal.init()
             }
 
         },
@@ -120,3 +142,60 @@ function getProyectosCategoria(button, JSONobject){
     });
 
 }
+
+
+function getGaleria(proyecto_id){
+
+    var datasend = {
+      func: "imagenesProyecto",
+      proyecto_id
+    };
+  
+    $.ajax({
+      type: "POST",
+      url: 'admin/php/Imagenes/App.php',
+      dataType: "json",
+      data: JSON.stringify(datasend),
+      success: function (response) {
+  
+        if (response.status == "success") {
+  
+            console.log(response.data)
+            $('#galeria-contenedor').empty()
+
+            $('#modal-titulo').text(response.data[0].nombre_proyecto)
+            $('#modal-texto').text(response.data[0].nombre_categoria)
+
+  
+            for (var i = 0; i < response.data.length; i++) {
+
+                $('#galeria-contenedor').append(`
+                    <div class="swiper-slide">
+                        <img src="resources/proyectos/${response.data[i].nombre_imagen}" alt="Imagen" class="modal__img">
+                    </div>    
+                `)
+  
+            }
+
+            const swiper = new Swiper('.swiper', {
+                direction: 'horizontal',
+                loop: true,
+                autoplay: {
+                    delay: 2000,
+                },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+    
+        });
+  
+        }
+      },
+      error: function (e) {
+        
+      },
+    });
+  
+  }
+  

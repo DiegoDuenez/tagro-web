@@ -9,24 +9,12 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <!--====== MAIN JS ======-->
 <script src="js/servicios.js"></script>
-<script src="js/proyectos.js"></script>
 
 <script>
 
     AOS.init()
 
-    const swiper = new Swiper('.swiper', {
-            direction: 'horizontal',
-            loop: true,
-            autoplay: {
-                delay: 2000,
-            },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-    });
+    
 
     
     const menu = new Menu({options: {element: '.menu', openWith: '#btn-menu', closeWith: '#btn-menu-close', size:'lg', from: 'right',
@@ -44,19 +32,6 @@
 
     menu.closeWith('.menu__link')
 
-    const modal = new Menu({options: {element: '.modal__container', openWith: '.proyectos__card', closeWith: '#btn-modal-close', from: 'bottom',
-        callbackOnOpen: function(){
-            let modal_back= document.querySelector('.modal')
-            modal_back.style.visibility = 'visible'
-
-        },
-        callbackOnClose: function(){
-            let modal = document.querySelector('.modal')
-            modal.style.visibility = 'hidden'
-        }  
-    }})
-    modal.init()
-
-
 
 </script>
+<script src="js/proyectos.js"></script>

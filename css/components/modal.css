@@ -42,11 +42,11 @@
 }
 
 .modal__col--w70{
-    width: 60%;
+    width: 70%;
 }
 
 .modal__col--w30{
-    width: 40%;
+    width: 30%;
     background-color: var(--blanco);
 }
     @media screen and (min-width: 300px) and (max-width: 700px){
