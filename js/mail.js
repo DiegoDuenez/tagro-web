@@ -60,7 +60,7 @@ function enviar() {
     else {
         document.getElementById('status').style.display = 'block'
         document.getElementById('status').innerHTML = "¡Debes aceptar el captcha!";
-        $('#status').css('color','black').css('font-size','1rem');
+        $('#status').css('color','white').css('font-size','1rem');
     }
 
     
