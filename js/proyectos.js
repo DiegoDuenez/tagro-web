@@ -84,11 +84,11 @@ function getProyectosCategoria(button, JSONobject){
             
                             <div class="proyectos__card-footer">
                                 <div class="proyectos__card-title">
-                                    ${response.data[i].nombre_proyecto}
+                                    ${response.data[i].nombre_categoria}
                                 </div>
                                 
                                 <div class="proyectos__card-text">
-                                    ${response.data[i].nombre_categoria}
+                                    ${response.data[i].nombre_proyecto}
                                 </div>
                             </div>
             
@@ -160,7 +160,6 @@ function getGaleria(proyecto_id){
   
         if (response.status == "success") {
   
-            console.log(response.data)
             $('#galeria-contenedor').empty()
 
             $('#modal-titulo').text(response.data[0].nombre_proyecto)

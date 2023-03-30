@@ -37,6 +37,7 @@ class Proyecto extends Model{
             ->join("imagenes", "imagenes.id", '=', "ip.imagen_id")
             ->where("proyectos.categoria_id", "=", $categoria_id)
             ->where("imagenes.principal", "=", "1")
+            ->where("proyectos.status", "=", "1")
             ->get();
         }
         else{
@@ -47,6 +48,7 @@ class Proyecto extends Model{
             ->join("imagenes_proyectos as ip", "ip.proyecto_id", '=', "proyectos.id")
             ->join("imagenes", "imagenes.id", '=', "ip.imagen_id")
             ->where("imagenes.principal", "=", "1")
+            ->where("proyectos.status", "=", "1")
             ->get();
         }
         
