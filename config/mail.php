@@ -32,7 +32,7 @@ if (empty($nombre) ||  empty($correo)  || empty($mensaje) || empty($telefono)) {
     $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
     $cabeceras .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
 
-    $cabeceras .= 'Para: <contacto@procomsamexico.com>' . "\r\n";
+    $cabeceras .= 'Para: <diegoduenez03@gmail.com>' . "\r\n";
     $cabeceras .= 'From: ' . $nombre . "\r\n";
 
     $sent = mail($para, utf8_decode($titulo), utf8_decode($mensaje), $cabeceras);

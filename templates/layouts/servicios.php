@@ -105,11 +105,11 @@
                  Acero inoxidable
             </div>
 
-            <?php $contador = 1; foreach($materiales['menu'] as $key => $value): ?>
+            <?php $contador = 0; foreach($materiales['menu'] as $key => $value): ?>
 
                 <div class="servicios__materiales-menu-item" data-title="<?php echo $key ?>" data-item="<?php echo $materiales['menu'][$key]['id']; ?>">
                     <div class="servicios__materiales-menu-numero">
-                        0<?php echo $contador++?>
+                        <?php $contador++; echo ($contador < 10 ? '0'.$contador : $contador) ?>
                     </div>
                     <div class="servicios__materiales-menu-texto" id="servicio_material">
                         <?php echo $key; ?>
@@ -148,6 +148,42 @@
                             <?php endif;?>
 
                         </ul>
+
+                        <?php if(array_key_exists('logos',$materiales['menu'][$key])): ?>
+
+                            <div class="servicios__materiales-logos">
+                                <?php foreach($materiales['menu'][$key]['logos'] as $value): ?>
+
+                                    <div class="servicios__materiales-logo">
+                                        <img src="<?php echo $value ?>" alt="Logo">
+                                    </div>
+
+                                <?php endforeach;?>
+                            </div>
+
+                        <?php endif;?>
+
+
+                        <?php if(array_key_exists('fichas_tecnicas',$materiales['menu'][$key])): ?>
+
+                            <div class="servicios__materiales-botones">
+
+                                <a class="servicios__materiales-boton">
+                                    Descargar Ficha Técnica
+                                </a>
+                                <?php foreach($materiales['menu'][$key]['fichas_tecnicas'] as $key => $value): ?>
+
+                                <a class="servicios__materiales-boton servicios__materiales-boton--outline" href="<?php echo $value ?>">
+                                    <?php echo $key ?>
+                                </a>
+
+                                <?php endforeach;?>
+
+                            </div>
+
+                        <?php endif;?>
+
+                        
 
                     </div>
 

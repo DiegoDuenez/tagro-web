@@ -63,14 +63,14 @@ $materiales = [
             ],
 
             "logos" => [
-                "..",
-                "..",
-                "..",
+                "resources/normas/fm-aproved.jpg",
+                "resources/normas/iso.jpg",
+                "resources/normas/made-france.jpg",
             ],
 
             "fichas_tecnicas" => [
-                "Application sheet FIRE FIGHTING",
-                "Firewater Tanks - Technical brief"
+                "Application sheet FIRE FIGHTING" => '#',
+                "Firewater Tanks - Technical brief" => '#'
             ],
 
             "visible" => 'false',
@@ -87,6 +87,12 @@ $materiales = [
             "texto" => "Manejamos dos marcas líderas a nivel mundial en este tipo de tanques así como
             un fabricante de domos geodésicos de aluminio, posicionada como una de las más grandes del mundo",
 
+            "logos" => [
+                "resources/logos/gls-azul.png",
+                "resources/logos/omerastore.png",
+                "resources/logos/ateco-azul.jpg",
+            ],
+
             "fichas_tecnicas" => [
 
             ],
@@ -96,6 +102,7 @@ $materiales = [
             "id" => "vidrio_fusionado"
 
         ]
+        
     ],
 
 
