@@ -516,6 +516,17 @@ function subirImagenesProyecto(imagenes, proyecto_id, callbackOnSuccess = undefi
   datasend.append("func", "subirImagenesProyecto")
   datasend.append("proyecto_id", proyecto_id)
 
+  Swal.fire({
+    title: 'Subiendo imagenes',
+    text: 'Por favor espere',
+    allowOutsideClick: false,
+    showCancelButton: false,
+    showConfirmButton: false,
+    onBeforeOpen: () => {
+        Swal.showLoading()
+    },
+});
+
   $.ajax({
     url: DIRECCION,
     data: datasend,

@@ -12,6 +12,7 @@ class Usuario extends Model{
     {
 
         $usuarios = $this->select(["usuarios.id", "usuarios.usuario", "usuarios.status"])
+        ->orderBy("id", "DESC")
         ->get();
         
         return json(

@@ -54,3 +54,14 @@ Stack trace:
 #2 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Proyectos\Proyecto.php(107): Model->exec()
 #3 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Proyectos\App.php(47): Proyecto->subirImagenesProyecto(Array, 'undefined')
 #4 {main}
+[31/03/23 13:49:39] Error: PDOException: PDO::__construct(): php_network_getaddresses: getaddrinfo failed: ï¿½ste es normalmente un error temporal durante la resoluciï¿½n de nombres de host y significa que el servidor local no recibiï¿½ una respuesta de un servidor autoritativo.  in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:22
+Stack trace:
+#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(22): PDO->__construct('mysql:host=awst...', 'tagro', 'tagro23$$', Array)
+#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(7): Database->__construct()
+#2 {main}
+
+Next PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Éste es normalmente un error temporal durante la resolución de nombres de host y significa que el servidor local no recibió una respuesta de un servidor autoritativo.  in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:22
+Stack trace:
+#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(22): PDO->__construct('mysql:host=awst...', 'tagro', 'tagro23$$', Array)
+#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(7): Database->__construct()
+#2 {main}

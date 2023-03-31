@@ -15,7 +15,7 @@ $(document).ready(function () {
 function getCategorias(){
     
     var datasend = {
-        func: "index",
+        func: "categoriasActivas",
     };
         
     $.ajax({

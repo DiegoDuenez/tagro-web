@@ -14,6 +14,7 @@ class Proyecto extends Model{
 
         $proyectos = $this->select(["proyectos.*", "categorias.nombre_categoria"])
         ->join("categorias", "categorias.id", "=", "proyectos.categoria_id")
+        ->orderBy("id", "DESC")
         ->get();
         
         return json(
@@ -67,7 +68,7 @@ class Proyecto extends Model{
 
         try{
 
-            if($this->exists('nombre_proyecto', $nombre_proyecto))
+            /*if($this->exists('nombre_proyecto', $nombre_proyecto))
             {
                 return json(
                     [
@@ -77,7 +78,7 @@ class Proyecto extends Model{
                     ]
                 , 400);
             }
-            else{
+            else{*/
 
                 
                 if($this->insert([
@@ -95,7 +96,7 @@ class Proyecto extends Model{
 
                 }
                
-            }
+            //}
 
 
         } catch(Exception $e) {
@@ -139,7 +140,7 @@ class Proyecto extends Model{
     public function edit($nombre_proyecto, $categoria_id, $id)
     {
 
-        if($this->exists('nombre_proyecto', $nombre_proyecto, $id))
+        /*if($this->exists('nombre_proyecto', $nombre_proyecto, $id))
         {
              return json(
                  [
@@ -149,7 +150,7 @@ class Proyecto extends Model{
                  ]
              , 400);
         }
-        else{
+        else{*/
  
             $this->update([
                 'nombre_proyecto' => $nombre_proyecto,
@@ -165,7 +166,7 @@ class Proyecto extends Model{
                     'message' => 'El proyecto se edito correctamente',
                 ]
             , 200);
-        }
+       // }
          
     }
 

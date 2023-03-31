@@ -10,7 +10,7 @@ function enviar() {
 
         if(nombre != "" && correo != "" && mensaje != "" && telefono != ""){
             $.ajax({
-                url: 'config/mail.php',
+                url: 'config/correo.php',
                 type: 'post',
                 data: {'nombre': nombre, 'correo': correo, 'mensaje': mensaje, 'telefono': telefono},
                 dataType: 'text',
@@ -27,8 +27,8 @@ function enviar() {
                         text: "Espera nuestra respuesta pronto",
                         icon: 'success',
                         confirmButtonText: "Ok",
-                        iconColor: '#f1790d',
-                        confirmButtonColor: "#f1790d",
+                        iconColor: '#142c52',
+                        confirmButtonColor: "#142c52",
                         }
                     )
                 

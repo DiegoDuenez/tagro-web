@@ -12,6 +12,7 @@ class Categoria extends Model{
     {
 
         $categorias = $this->select()
+        ->orderBy("id", "DESC")
         ->get();
         
         return json(
