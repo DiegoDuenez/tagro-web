@@ -263,6 +263,7 @@
     width: 60%;
     font-size: 1.5rem;
     gap: 2rem;
+    height: max-content;
 }
     @media screen and (min-width: 300px) and (max-width: 700px){
         .servicios__materiales-info{
@@ -290,12 +291,25 @@
     justify-content: center;
     gap: 2rem;
 }
+    @media screen and (min-width: 300px) and (max-width: 480px){
+        .servicios__materiales-logos{
+            flex-direction: column;
+            height: max-content;
+            align-items: center;
+
+        }
+    }
 
 .servicios__materiales-logo{
     display: flex;
     width: 25%;
     height: 100%;
 }
+    @media screen and (min-width: 300px) and (max-width: 480px){
+        .servicios__materiales-logo{
+            width: 50%;
+        }
+    }
 
 .servicios__materiales-logo img{
     width: 100%;
@@ -311,7 +325,8 @@
     text-align: center;
     color: var(--blanco);
     justify-content: center;
-    height: 3rem;
+    min-height: 3rem;
+    height: max-content;
     align-items: center;
     outline: none;
     cursor: pointer;
