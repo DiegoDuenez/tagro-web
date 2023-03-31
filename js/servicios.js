@@ -4,6 +4,7 @@ const servicio_title = document.querySelector("#servicio-title")
 
 for (let i = 0; i < servicios__item.length; i++) {
 
+
     servicios__item[i].addEventListener('click', function (event) {
 
         let element = document.querySelector("#"+this.getAttribute("data-item"))

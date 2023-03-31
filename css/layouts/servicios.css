@@ -219,6 +219,11 @@
     color: var(--azul);
 }
 
+.servicios__materiales-menu-texto--selected{
+    border-left: 3px var(--celeste) solid;
+    color: var(--azul);
+}
+
 .servicios__materiales-descripcion{
     display: flex;
     width: 70%;
