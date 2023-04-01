@@ -36,7 +36,7 @@
 }
 
 .contacto__titulo{
-    font-size: 4rem;
+    font-size: var(--fs-titulos-lg);
     width: 100%;
     font-weight: bold;
     text-align: center;
@@ -44,13 +44,13 @@
 }
 
 .contacto__titulo span{
-    font-size: 4rem;
+    font-size: var(--fs-titulos-lg);
     color: var(--celeste);
 }
 
 .contacto__texto{
     color: var(--blanco);
-    font-size: 1.5rem;
+    font-size: var(--fs-textos);
     text-align: center;
 
 }
@@ -106,7 +106,7 @@
 .contacto__input::placeholder { 
     color: var(--blanco);
     opacity: 1; 
-    font-size: 2rem;
+    font-size: var(--fs-textos);
 }
 
 .contacto__input:focus::placeholder{
@@ -125,6 +125,7 @@
     align-self: center;
     cursor: pointer;
     text-align: center;
+    font-size: var(--fs-textos);;
 }
 
 .contacto__informacion{
@@ -143,7 +144,7 @@
 .contacto__link{
     color: var(--blanco);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: var(--fs-textos);
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -161,7 +162,7 @@
 
 .contacto__link i{
     color: var(--celeste);
-    font-size: 1.5rem;
+    font-size: var(--fs-textos);
 }
 
 .contacto__link--white i{

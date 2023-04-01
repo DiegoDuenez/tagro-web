@@ -79,14 +79,14 @@
     }
 
 .modal__titulo{
-    font-size: 2rem;
+    font-size: var(--fs-titulos);
     color: var(--azul);
     font-weight: bold;
     text-align: center;
 }
 
 .modal__texto{
-    font-size: 1.5rem;
+    font-size: var(--fs-textos);
     text-align: center;
 }
 

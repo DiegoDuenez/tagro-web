@@ -33,7 +33,7 @@
 }
 
 .otros-servicios__titulo{
-    font-size: 4rem;
+    font-size: var(--fs-titulos-lg);
     width: 100%;
     font-weight: bold;
     text-align: center;
@@ -41,15 +41,16 @@
 }
 
 .otros-servicios__titulo span{
-    font-size: 4rem;
+    font-size:  var(--fs-titulos-lg);
     color: var(--celeste);
 }
 
 .otros-servicios__texto{
-    font-size: 1.5rem;
+    font-size:  var(--fs-textos);
     text-align: justify;
     width: 60%;
     margin-top: 2rem;
+    line-height: var(--lh-textos);
 }
 
 .otros-servicios__normas{
@@ -69,13 +70,13 @@
 
 
 .otros-servicios__normas-titulo{
-    font-size: 2rem;
+    font-size: var(--fs-titulos);
     color: var(--blanco);
     text-align: center;
 }
 
 .otros-servicios__normas-titulo span{
-    font-size: 2rem;
+    font-size:  var(--fs-titulos);
     color: var(--celeste);
 }
 

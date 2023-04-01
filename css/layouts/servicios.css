@@ -17,7 +17,6 @@
     
 }
 
-
 .servicios__contenedor{
     display: flex;
     background-color: var(--azul);
@@ -99,47 +98,28 @@
 
 .servicios__card-titulo{
     color: var(--celeste);
-    font-size: 2rem;
+    font-size: var(--fs-titulos);
     font-weight: bold;
 }
 
 .servicios__card-texto{
     color: var(--blanco);
-    font-size: 1.5rem;
+    font-size: var(--fs-textos);
     position: relative;
+    line-height: var(--lh-textos);
 }
-/*
-.servicios__card-texto::before{
-    content: " ";
-    font-weight: bold;
-    position: absolute;
-    background-color: var(--celeste);
-    width: 3rem;
-    height: 0.3rem;
-    left: -4rem;
-    top: 0.7rem;
-}*/
 
 .servicios__titulo{
-    font-size: 4rem;
+    font-size: var(--fs-titulos);
     color: var(--blanco);
     text-align: center;
+    line-height: var(--lh-textos-lg);
 }
 
 .servicios__titulo span{
-    font-size: 4rem;
+    font-size:var(--fs-titulos);
     color: var(--celeste);
 }
-    @media screen and (min-width: 300px) and (max-width: 1400px){
-        .servicios__titulo{
-            font-size: 3rem;
-        }
-
-        .servicios__titulo span{
-            font-size: 3rem;
-        }
-    }
-
 
 .servicios__img{
     position: absolute;
@@ -187,8 +167,8 @@
 
 .servicios__materiales-titulo{
     color: var(--azul);
-    font-size: 3rem;
-    text-align: left;
+    font-size: var(--fs-titulos);
+    text-align: center;
     font-weight: bold;
 }
 
@@ -201,17 +181,18 @@
 }
 
 .servicios__materiales-menu-numero{
-    font-size: 1.5rem;
+    font-size: var(--fs-textos);
     padding: 1rem;
     color: var(--celeste);
     font-weight: bold;
 }
 
 .servicios__materiales-menu-texto{
-    font-size: 1.5rem;
+    font-size: var(--fs-textos);
     padding: 1rem;
     color: var(--gris);
     font-weight: bold;
+    text-align: left;
 }
 
 .servicios__materiales-menu-texto:hover{
@@ -261,9 +242,10 @@
     flex-direction: column;
     padding: 3rem;
     width: 60%;
-    font-size: 1.5rem;
+    font-size: var(--fs-textos);
     gap: 2rem;
     height: max-content;
+    line-height: var(--lh-textos);
 }
     @media screen and (min-width: 300px) and (max-width: 700px){
         .servicios__materiales-info{
@@ -281,7 +263,7 @@
 }
 
 .servicios__materiales-lista li{
-    font-size: 1.5rem;
+    font-size: var(--fs-textos);
 }
 
 .servicios__materiales-logos{
@@ -331,8 +313,8 @@
     outline: none;
     cursor: pointer;
     gap: 1rem;
-    padding: 2rem;
-    font-size: 1.5rem;
+    padding: 1rem;
+    font-size: var(--fs-textos);
     text-decoration: none;
 
 }

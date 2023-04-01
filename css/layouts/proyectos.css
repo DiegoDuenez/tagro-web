@@ -24,7 +24,7 @@
 
 
 .proyectos__titulo{
-    font-size: 4rem;
+    font-size: var(--fs-titulos-lg);
     width: 100%;
     font-weight: bold;
     text-align: center;
@@ -32,7 +32,7 @@
 }
 
 .proyectos__titulo span{
-    font-size: 4rem;
+    font-size: var(--fs-titulos-lg);
     color: var(--celeste);
 }
 
@@ -68,8 +68,9 @@
     color: var(--gris);
     padding: 1rem;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: var(--fs-textos);
     cursor: pointer;
+    text-align: left;
 }
 
 .proyectos__categoria:hover{
@@ -142,11 +143,11 @@
 
 .proyectos__card-title{
     color: var(--celeste);
-    font-size: 1.2rem;
+    font-size: var(--fs-textos);
     font-weight: bold;
 }
 
 .proyectos__card-text{
     color: var(--blanco);
-    font-size: 1rem;
+    font-size: var(--fs-textos);
 }

@@ -43,11 +43,9 @@
         }
     }
 
-
 .nosotros__descripcion--celeste{
     background-color: var(--celeste);
     color: var(--blanco);
-    font-size: 1.5rem;
 }
     @media screen and (min-width: 300px) and (max-width: 1000px){
         .nosotros__descripcion--celeste{
@@ -57,7 +55,7 @@
 
 
 .nosotros__titulo{
-    font-size: 3rem;
+    font-size: var(--fs-titulos);
     font-family: 'Lato-Bold';
     color: var(--gris);
     width: 100%;
@@ -65,7 +63,7 @@
 }
 
 .nosotros__titulo span{
-    font-size: 3rem;
+    font-size: var(--fs-titulos);
     font-family: 'Lato-Bold';
 }
 
@@ -79,27 +77,27 @@
 
 .nosotros__texto{
     padding: 0 4rem;
-    font-size: 1.5rem;
+    font-size: var(--fs-textos);
     color: var(--gris);
     line-height: 2rem;
 }
 
 .nosotros__texto span{
-    font-size: 1.5rem;
+    font-size: var(--fs-textos);
 }
 
 .nosotros__lista{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    font-size: 1.5rem;
+    font-size: var(--fs-textos);
     line-height: 2rem;
     color: var(--blanco);
 
 }
 
 .nosotros__lista ul li{
-    font-size: 1.5rem;
+    font-size: var(--fs-textos);
     line-height: 2rem;
 }
 

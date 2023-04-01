@@ -15,21 +15,13 @@
     --gris: #5d5d5d;
     --ff-titulos: 'Lato-Bold';
     --ff-textos: 'Lato-Regular';
-    --fs-titulos: 3rem;
-    --fs-textos: 1rem;
+    --fs-titulos: 2rem;
+    --fs-titulos-lg: 3rem;
+    --fs-textos: 1.2rem;
     --lh-textos: 2rem;
+    --lh-textos-lg: 3rem;
 
 }
-
-
-@media screen and (min-width: 300px) and (max-width: 1600px){
-    :root{
-        --fs-titulos: 3rem;
-        --fs-textos: 1.2rem;
-        --lh-textos: 1.5rem;
-    }
-}
-
 
 /*
 |   ---------------------------------------------------------------------------------
