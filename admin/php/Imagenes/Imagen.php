@@ -3,6 +3,7 @@
 include '../Utilities/Model.php';
 include '../Utilities/Hash.php';
 include '../Utilities/Response.php';
+include '../Utilities/FileManager.php';
 
 class Imagen extends Model{
 
@@ -67,24 +68,33 @@ class Imagen extends Model{
 
     public function destroy($id){
 
-        $proyecto_id = $this->rawQuery("SELECT * FROM imagenes_proyectos WHERE imagen_id = $id")->get()[0]['proyecto_id'];
+        $proyectos = $this->rawQuery("SELECT * FROM imagenes_proyectos WHERE imagen_id = $id")->get()[0];
 
-        if($this->rawStatment("DELETE FROM imagenes_proyectos WHERE imagen_id = $id")->exec()){
+        $proyecto_id = $proyectos['proyecto_id'];
 
-            $this->delete()
-            ->where("id", "=", $id)
-            ->exec();
-    
-            return json(
-                [
-                    'status' => 'success',
-                    'data' => ['proyecto_id' => $proyecto_id],
-                    'message' => 'Se elimino la imagen',
-                ]
-            , 200);
+        $imagen = $this->select()->where("id","=", $id)->get()[0];
+
+        if(FileManager::dropFile('../../../resources/proyectos/'.$imagen['nombre_imagen'])){
+
+            if($this->rawStatment("DELETE FROM imagenes_proyectos WHERE imagen_id = $id")->exec()){
+
+                $this->delete()
+                ->where("id", "=", $id)
+                ->exec();
+        
+                return json(
+                    [
+                        'status' => 'success',
+                        'data' => ['proyecto_id' => $proyecto_id],
+                        'message' => 'Se elimino la imagen',
+                    ]
+                , 200);
+        
+            }
     
         }
 
+        
      
 
     }

@@ -74,6 +74,11 @@ class FileManager{
             
     }
 
+    public static function dropFile($file){
+
+        return unlink($file);
+    }
+
     public static function folderExist($path){
         if (is_dir($path)) {
             return true;
