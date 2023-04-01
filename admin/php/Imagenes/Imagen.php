@@ -93,6 +93,15 @@ class Imagen extends Model{
             }
     
         }
+        else{
+            return json(
+                [
+                    'status' => 'success',
+                    'data' => '',
+                    'message' => 'Hubo un problema al trata de eliminar la imagen',
+                ]
+            , 400);
+        }
 
         
      
