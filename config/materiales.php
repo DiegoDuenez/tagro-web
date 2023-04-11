@@ -25,7 +25,7 @@ $materiales = [
 
         "Acero al carbón" => [
 
-            "img" => "resources/acero-carbon.jpg",
+            "img" => "resources/acero-car.jpg",
 
             "texto" => "Grandes ventajas",
 

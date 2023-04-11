@@ -25,14 +25,6 @@ function json($data, $status_code = 200){
 
 }
 
-function stringJSONToArray($string){
-
-    $obj = str_replace("\r\n", " ", str_replace("'", '"',str_replace('"', "'", $string)));
-    $array = json_decode($obj, true);
-    return $array;
-
-}
-
 
 /**
  * Recoje el valor de una entrada de datos
