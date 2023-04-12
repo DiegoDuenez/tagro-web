@@ -43,8 +43,9 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 0 5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
 }
     @media screen and (min-width: 300px) and (max-width: 1466px){
         .otros-servicios__header{
@@ -81,10 +82,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 4rem;
+    margin-top: 2rem;
     gap: 3rem;
     padding: 3rem 1rem;
-    align-items: flex-start;
+    align-items: center;
 }
     @media screen and (min-width: 300px) and (max-width: 900px){
         .otros-servicios__normas{
@@ -166,21 +167,24 @@
     }
 
 .otros-servicios--carousel{
-    position: absolute;
-    width: 41rem;
+    width: 40%;
     height: 32rem;
     top: 0;
     right: 0;
     overflow: hidden;
+    margin-top: 2rem;
 }
-    @media screen and (min-width: 300px) and (max-width: 1687px){
+    @media screen and (min-width: 501px) and (max-width: 950px){
         .otros-servicios--carousel{
-
-            width: 31rem;
-            height: 40rem;
+            width: 60%;
         }
     }
-    @media screen and (min-width: 300px) and (max-width: 1466px){
+    @media screen and (min-width: 300px) and (max-width: 500px){
+        .otros-servicios--carousel{
+            width: 80%;
+        }
+    }
+    /*@media screen and (min-width: 300px) and (max-width: 1466px){
         .otros-servicios--carousel{
             position: relative;
             margin-top: 1rem;
@@ -192,7 +196,7 @@
             width: 100%;
             margin-top: 0;
         }
-    }
+    }*/
    
 .otros-servicios__normas-container{
     width: 70%;
