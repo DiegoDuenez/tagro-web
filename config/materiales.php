@@ -69,8 +69,9 @@ $materiales = [
             ],
 
             "fichas_tecnicas" => [
-                "Application sheet FIRE FIGHTING" => '#',
-                "Firewater Tanks - Technical brief" => '#'
+                "Application sheet FIRE FIGHTING - ENGLISH" => 'resources/pdf/Application sheet FIRE FIGHTING-TAGRO INGLES.pdf',
+                "Ficha de aplicación FIRE FIGHTING - ESPAÑOL" => 'resources/pdf/FICHA DE APLICACION FIRE FIGHTING-TAGRO ESPAÑOL.pdf',
+                "Firewater Tanks Technical brief - ENG/ESP" => 'resources/pdf/Firewater Tanks - Technical brief-TAGRO ING-ESP.pdf'
             ],
 
             "visible" => 'false',
@@ -94,7 +95,8 @@ $materiales = [
             ],
 
             "fichas_tecnicas" => [
-
+                "GLS TANKS - ENG/ESP" => 'resources/pdf/CATALOGO-GLS TANKS.pdf',
+                "CATÁLOGO OMERASTORE BROCHURE - ESPAÑOL" => 'resources/pdf/OMERASTORE_BROCHURE_EN-ESP_2023 TAGRO MEXICO.pdf'
             ],
 
             "visible" => 'false',

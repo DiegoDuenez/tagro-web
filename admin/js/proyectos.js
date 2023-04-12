@@ -62,7 +62,7 @@ function initElements(){
 
         if(editar){
 
-          inputs.each(function (e) {
+          /*inputs.each(function (e) {
             if (inputs[e].value == "" || inputs[e].value == null) {
                 Swal.fire({
                   icon: "warning",
@@ -74,7 +74,7 @@ function initElements(){
                 });
                 dataValid = false;
               }
-          });
+          });*/
 
           selects.each(function (e) {
               if (selects[e].value == 0 || selects[e].value == null) {
@@ -99,7 +99,7 @@ function initElements(){
         }
         else{
 
-            inputs.each(function (e) {
+            /*inputs.each(function (e) {
                 if (inputs[e].value == "" || inputs[e].value == null) {
                   Swal.fire({
                     icon: "warning",
@@ -111,7 +111,7 @@ function initElements(){
                   });
                   dataValid = false;
                 }
-            });
+            });*/
 
             selects.each(function (e) {
                 if (selects[e].value == 0 || selects[e].value == null) {

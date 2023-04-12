@@ -53,7 +53,7 @@
                                     <form id="formulario">
                         
                                         <div class="form-group mt-2">
-                                            <label for="inp_proyecto">Nombre proyecto <span class="text-danger" title="Campo obligatorio">*</span></label>
+                                            <label for="inp_proyecto">Nombre proyecto </label>
                                             <input class="form-control" id="inp_proyecto" placeholder="Nombre proyecto" required />
                                         </div>
 

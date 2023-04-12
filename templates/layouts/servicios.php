@@ -171,7 +171,7 @@
                                 </a>
                                 <?php foreach($materiales['menu'][$key]['fichas_tecnicas'] as $key => $value): ?>
 
-                                <a class="servicios__materiales-boton servicios__materiales-boton--outline" href="<?php echo $value ?>">
+                                <a class="servicios__materiales-boton servicios__materiales-boton--outline" href="<?php echo $value ?>" download>
                                     <?php echo $key ?>
                                 </a>
 
