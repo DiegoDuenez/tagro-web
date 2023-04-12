@@ -167,14 +167,22 @@
 
 .otros-servicios--carousel{
     position: absolute;
-    width: 35%;
-    height: 80%;
+    width: 41rem;
+    height: 32rem;
     top: 0;
     right: 0;
+    overflow: hidden;
 }
+    @media screen and (min-width: 300px) and (max-width: 1687px){
+        .otros-servicios--carousel{
+
+            width: 31rem;
+            height: 40rem;
+        }
+    }
     @media screen and (min-width: 300px) and (max-width: 1466px){
         .otros-servicios--carousel{
-            position: inherit;
+            position: relative;
             margin-top: 1rem;
             width: 60%;
         }
@@ -183,7 +191,6 @@
         .otros-servicios--carousel{
             width: 100%;
             margin-top: 0;
-
         }
     }
    
