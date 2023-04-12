@@ -65,3 +65,18 @@ Stack trace:
 #0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(22): PDO->__construct('mysql:host=awst...', 'tagro', 'tagro23$$', Array)
 #1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Usuarios\App.php(7): Database->__construct()
 #2 {main}
+[11/04/23 19:27:45] Error: PDOException: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:22
+Stack trace:
+#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(22): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Categorias\App.php(7): Database->__construct()
+#2 {main}
+[11/04/23 19:27:54] Error: PDOException: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:22
+Stack trace:
+#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(22): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Proyectos\App.php(12): Database->__construct()
+#2 {main}
+[11/04/23 19:27:54] Error: PDOException: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php:22
+Stack trace:
+#0 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\database.php(22): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\PAGINAS\tagro_web\admin\php\Categorias\App.php(7): Database->__construct()
+#2 {main}
