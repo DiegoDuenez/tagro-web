@@ -37,10 +37,26 @@
         direction: 'horizontal',
         loop: true,
         autoplay: {
-            delay: 1000,
+            delay: 3000,
         },
-        disableOnInteraction: false,
-        pauseOnMouseEnter: false,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1
+            },
+            768: {
+                slidesPerView: 2
+            },
+            1024: {
+                slidesPerView: 3
+            },
+            1560: {
+                slidesPerView: 3
+            }
+        },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
