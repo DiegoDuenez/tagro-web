@@ -71,7 +71,7 @@
 
 .otros-servicios__texto{
     font-size:  var(--fs-textos);
-    text-align: justify;
+    text-align: center;
     width: 60%;
     margin-top: 2rem;
     line-height: var(--lh-textos);
