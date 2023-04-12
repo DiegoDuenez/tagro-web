@@ -7,8 +7,6 @@
 
     <div class="servicios__contenedor">
 
-    <!-- <div class="fondo fondo--z0"></div> -->
-
 
         <div class="servicios__row">
 

@@ -123,13 +123,12 @@
 
 .servicios__img{
     position: absolute;
-    left: -22rem;
-    top: 2rem;
+    left: -15rem;
     z-index: 1;
 }
     @media screen and (min-width: 300px) and (max-width: 1900px){
         .servicios__img{
-            left: -35rem;
+            left: -25rem;
         }
     }
     @media screen and (min-width: 300px) and (max-width: 1040px){
